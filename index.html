@@ -18,7 +18,6 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        // 모든 폰트를 Pretendard로 변경
                         sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', '"Helvetica Neue"', '"Segoe UI"', '"Apple SD Gothic Neo"', '"Noto Sans KR"', '"Malgun Gothic"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', 'sans-serif'],
                         menu: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', '"Helvetica Neue"', '"Segoe UI"', '"Apple SD Gothic Neo"', '"Noto Sans KR"', '"Malgun Gothic"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', 'sans-serif'],
                         inter: ['Inter', 'sans-serif']
@@ -28,7 +27,6 @@
         }
     </script>
     <style>
-        /* 기본 리셋 및 스크롤 스냅 설정 */
         html,
         body {
             margin: 0;
@@ -40,39 +38,29 @@
             scroll-behavior: smooth;
         }
 
-        /* 스냅 컨테이너 */
         .scroll-container {
             width: 100%;
             height: 100vh;
             overflow-y: scroll;
-            /* 스크롤 스냅 기능 제거 */
             scrollbar-width: none;
-            /* 파이어폭스 스크롤바 숨기기 */
+            position: relative;
         }
 
         .scroll-container::-webkit-scrollbar {
             display: none;
-            /* 크롬/사파리 스크롤바 숨기기 */
         }
 
-        /* 각 페이지 섹션 */
         .section {
             width: 100%;
-            height: 1500px;
-            /* scroll-snap-align 제거 */
+            height: auto;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            /* 중앙 정렬에서 상단 기준 정렬로 변경하여 margin-top이 정확히 먹히도록 함 */
             align-items: center;
             position: relative;
         }
 
-
-
-
-
-        /* 빈 첫 화면 대신 콘텐츠 섹션 공통 스타일 */
         .content-section {
             background-color: #ffffff;
             color: #000000;
@@ -84,14 +72,12 @@
             padding-bottom: 100px;
         }
 
-        /* 이미지 컨테이너 (라운딩 제거, 가로폭 가득 차게) */
         .full-image-container {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            /* 라운딩 처리 제거 */
             border-radius: 0;
         }
 
@@ -101,7 +87,6 @@
             display: block;
         }
 
-        /* 로고 애니메이션 (미세한 페이드인) */
         .logo-fade {
             animation: fadeIn 2.5s ease-in-out forwards;
             width: 100%;
@@ -119,9 +104,7 @@
             }
         }
 
-        /* -------------------------------------
-           SECTION 3 (Property Overview ANIMATION)
-        -------------------------------------- */
+        /* SECTION 3 (Property Overview BLACK) */
         .bs-section-3 {
             position: relative;
             width: 100%;
@@ -129,7 +112,7 @@
             flex-direction: column;
             align-items: center;
             overflow: hidden;
-            background-color: #ffffff;
+            background-color: #000000 !important;
         }
 
         .bs-section-3 .full-image-container img {
@@ -163,7 +146,40 @@
             width: 100%;
         }
 
-        /* 딜레이 유틸리티 */
+        /* SECTION 4 Sequential Animations */
+        #section4 .logo-wrapper {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        #section4.active .logo-wrapper {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #section4 .green-panel {
+            transform: translateX(100%);
+            transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition-delay: 0.5s;
+        }
+
+        #section4.active .green-panel {
+            transform: translateX(0);
+        }
+
+        #section4 .text-content-wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition-delay: 1.2s;
+        }
+
+        #section4.active .text-content-wrapper {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .delay-100 {
             transition-delay: 100ms;
         }
@@ -204,7 +220,6 @@
             transition-delay: 1000ms;
         }
 
-        /* 반응형: 모바일에서는 좌우 마진 제거 */
         @media (max-width: 768px) {
             .content-section {
                 padding-left: 0px;
@@ -216,90 +231,58 @@
 
 <body class="font-sans">
 
-    <!-- 헤더 영역 (블랙스톤 분위기: 흰색 배경, 검은 글씨, 스크롤 위로 시 팝업) -->
-    <!-- 초기 상태를 숨김 처리하고 트랜지션 시간 연장 -->
-    <header id="main-header"
-        class="fixed top-0 left-0 w-full bg-white text-black z-50 transition-transform duration-1000 transform flex justify-between items-center px-6 md:px-[180px] py-[35px]"
-        style="transform: translateY(-100%);">
-        <!-- 왼쪽 위 로고 텍스트 (임의) -->
-        <div class="text-xl font-bold tracking-normal">
-            IOTA Seoul
-        </div>
-
-        <!-- 오른쪽 영역: 메뉴 + 언어 변환기 -->
-        <div class="hidden md:flex items-center space-x-10">
-            <!-- 네비게이션 메뉴 (일반 굵기 normal, 16px 로 확장) -->
-            <nav class="flex space-x-8 text-[16px] font-normal text-gray-800">
-                <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Our Firm"
-                    data-kr="회사 소개">Our Firm</a>
-                <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Businesses"
-                    data-kr="사업 영역">Businesses</a>
-                <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Insights"
-                    data-kr="인사이트">Insights</a>
-                <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Careers"
-                    data-kr="채용 정보">Careers</a>
-                <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="News"
-                    data-kr="새소식">News</a>
-            </nav>
-
-            <!-- 한영 변환 구분선 -->
-            <div class="w-px h-4 bg-gray-300"></div>
-
-            <!-- 데스크탑 한영 변환기 (드롭다운) -->
-            <div class="relative group text-[14px]">
-                <button
-                    class="flex items-center space-x-1 font-bold text-gray-800 hover:text-gray-500 transition-colors duration-200 focus:outline-none pb-2 -mb-2">
-                    <span id="current-lang-text">EN</span>
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div
-                    class="absolute right-0 mt-2 w-16 bg-white border border-gray-100 shadow-lg hidden group-hover:block py-1 z-50 rounded-sm">
-                    <button class="block w-full text-left px-3 py-1 text-[13px] hover:bg-gray-50 text-gray-600"
-                        onclick="switchLanguage('en')">EN</button>
-                    <button class="block w-full text-left px-3 py-1 text-[13px] hover:bg-gray-50 text-gray-600"
-                        onclick="switchLanguage('kr')">KR</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 모바일 햄버거 메뉴 및 모바일 언어 변환기 -->
-        <div class="md:hidden flex items-center space-x-4">
-            <!-- 모바일 한영 변환기 (드롭다운) -->
-            <div class="relative group text-[13px]">
-                <button
-                    class="flex items-center space-x-1 font-bold text-gray-800 hover:text-gray-500 transition-colors duration-200 focus:outline-none pb-2 -mb-2">
-                    <span id="current-lang-text-mob">EN</span>
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div
-                    class="absolute right-0 mt-2 w-16 bg-white border border-gray-100 shadow-lg hidden group-hover:block py-1 z-50 rounded-sm">
-                    <button class="block w-full text-left px-3 py-1 hover:bg-gray-50 text-gray-600"
-                        onclick="switchLanguage('en')">EN</button>
-                    <button class="block w-full text-left px-3 py-1 hover:bg-gray-50 text-gray-600"
-                        onclick="switchLanguage('kr')">KR</button>
-                </div>
-            </div>
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16">
-                </path>
-            </svg>
-        </div>
-    </header>
-
     <div class="scroll-container" id="scroll-container">
 
-        <!-- SECTION 1 (초기 진입 첫 화면: 검은 바탕의 중앙 로고 및 스크롤 바운스 화살표) -->
+        <!-- HEADER (Scroll-based Visibility) -->
+        <header id="main-header"
+            class="fixed top-0 left-0 w-full bg-white text-black z-50 flex justify-between items-center px-6 md:px-[180px] py-[35px] transition-transform ease-in-out"
+            style="transform: translateY(-100%);">
+            <div class="text-xl font-bold tracking-normal">IOTA Seoul</div>
+            <div class="hidden md:flex items-center space-x-10">
+                <nav class="flex space-x-8 text-[16px] font-normal text-gray-800">
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Our Firm"
+                        data-kr="회사 소개">Our Firm</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Businesses"
+                        data-kr="사업 영역">Businesses</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Insights"
+                        data-kr="인사이트">Insights</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="Careers"
+                        data-kr="채용 정보">Careers</a>
+                    <a href="#" class="hover:text-gray-500 transition-colors duration-200" data-en="News"
+                        data-kr="새소식">News</a>
+                </nav>
+                <div class="w-px h-4 bg-gray-300"></div>
+                <div class="relative group text-[14px]">
+                    <button
+                        class="flex items-center space-x-1 font-bold text-gray-800 hover:text-gray-500 focus:outline-none pb-2 -mb-2">
+                        <span id="current-lang-text">EN</span>
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute right-0 mt-2 w-16 bg-white border border-gray-100 shadow-lg hidden group-hover:block py-1 z-50 rounded-sm">
+                        <button class="block w-full text-left px-3 py-1 hover:bg-gray-50 text-gray-600"
+                            onclick="switchLanguage('en')">EN</button>
+                        <button class="block w-full text-left px-3 py-1 hover:bg-gray-50 text-gray-600"
+                            onclick="switchLanguage('kr')">KR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center space-x-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </div>
+        </header>
+
+        <!-- SECTION 1 (Intro) -->
         <section class="section min-h-screen bg-black flex flex-col items-center justify-center relative">
-            <!-- 로고 영역 -->
             <div class="logo-fade w-full flex justify-center pb-20">
                 <img src="img/logo_white.png" alt="IOTA Logo" class="h-20 md:h-28 object-contain">
             </div>
-
-            <!-- 스크롤 화살표 -->
             <div id="scroll-arrow"
                 class="absolute bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-1000">
                 <svg class="w-8 h-8 text-white animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -309,204 +292,183 @@
             </div>
         </section>
 
-        <!-- SECTION 2 (기존 첫 화면: 상단 텍스트 + 풀 이미지 컷) -->
-        <section class="section content-section h-auto">
-            <!-- 텍스트 영역 (이미지 상단) -->
-            <div class="w-full px-6 md:px-0 flex flex-col md:flex-row justify-between items-center mb-12">
-                <!-- 큰 텍스트 (New Heart of Seoul, -5px 적용, 자간 -1 적용) -->
-                <h1 class="text-[31px] md:text-[55px] lg:text-[67px] font-bold leading-tight text-black md:w-[45%] tracking-[-1px]"
-                    data-en="New Heart of Seoul" data-kr="New Heart of Seoul">New
-                    Heart of Seoul</h1>
+        <!-- SECTION 2 (Main Content) -->
+        <section class="section content-section h-auto pb-[200px]" id="section2" style="padding-bottom: 200px;">
+            <!-- Header Spacer -->
+            <div class="h-[100px] w-full invisible"></div>
 
-                <!-- 작은 텍스트 -->
+            <div class="w-full px-6 md:px-0 flex flex-col md:flex-row justify-between items-center mb-12">
+                <h1 class="text-[31px] md:text-[55px] lg:text-[67px] font-bold leading-tight text-black md:w-[45%] tracking-[-1px]"
+                    data-en="New Heart of Seoul" data-kr="New Heart of Seoul">New Heart of Seoul</h1>
                 <div id="desc-text"
                     class="font-inter md:w-[calc(50%+30px)] mt-8 md:mt-0 text-[14px] md:text-[17px] tracking-[-0.02em] font-light text-black leading-relaxed space-y-6">
-                    <p data-en="IOTA Seoul is the next-generation landmark redefining the heart of Korea’s capital. Perfectly positioned between the iconic Namsan and Seoul Station, this architectural masterpiece seamlessly bridges Seoul’s rich heritage with its dynamic future."
-                        data-kr="이오타 서울은 최첨단 오피스와 최고급 호텔, 프리미엄 주거가 결합된 연면적 14만 평 규모의 대규모 복합개발 프로젝트입니다. 남산의 광활한 녹지와 광역 교통의 허브인 서울역과 인접한 입지에 자리하며, 지속가능한 설계를 기반으로 문화·미식·리테일·엔터테인먼트가 유기적으로 어우러진 복합 환경을 구현합니다. 이를 통해 글로벌 기업과 인재들에게 비즈니스와 라이프스타일이 자연스럽게 연결되는 최적의 업무·생활 플랫폼을 제공합니다.">
-                        IOTA Seoul is the next-generation landmark redefining the heart of Korea’s capital. Perfectly
-                        positioned between the iconic Namsan and Seoul Station, this architectural masterpiece
-                        seamlessly bridges Seoul’s rich heritage with its dynamic future.
+                    <p class="kr-target-text transition-all duration-300"
+                        data-en="IOTA Seoul is the next-generation landmark redefining the heart of Korea’s capital. Perfectly positioned between the iconic Namsan and Seoul Station, this architectural masterpiece seamlessly bridges Seoul’s rich heritage with its dynamic future."
+                        data-kr="이오타 서울은 최첨단 오피스와 최고급 호텔, 프리미엄 주거가 결합된 연면적 14만 평 규모의 대규모 복합개발 프로젝트입니다. 남산의 광활한 녹지와 광역 교통의 허브인 서울역과 인접한 입지에 자리하며, 지속가능한 설계를 기반으로 문화 매식 리테일 엔터테인먼트가 유기적으로 어우러진 복합 환경을 구현합니다. 이를 통해 글로벌 기업과 인재들에게 비즈니스와 라이프스타일이 자연스럽게 연결되는 최적의 업무 생활 플랫폼을 제공합니다.">
+                        IOTA Seoul is the next-generation landmark redefining the heart of Korea’s capital.
                     </p>
-                    <p data-en="Spanning an impressive 4,948,871 square feet, IOTA Seoul sets a new benchmark for cutting-edge business districts. Designed with state-of-the-art technology and sustainability at its core, it offers premium office spaces, Seoul’s largest integrated green space connected to Namsan, wellness-driven retail, and world-class cultural destinations."
+                    <p class="kr-target-text transition-all duration-300"
+                        data-en="Spanning an impressive 4,948,871 square feet, IOTA Seoul sets a new benchmark for cutting-edge business districts. Designed with state-of-the-art technology and sustainability at its core, it offers premium office spaces, Seoul’s largest integrated green space connected to Namsan, wellness-driven retail, and world-class cultural destinations."
                         data-kr="서울의 역사적 맥락과 미래 비전을 동시에 담아내는 상징적 랜드마크로서, IOTA 서울은 연중 다양한 프로그램과 공간 경험을 통해 방문객과 입주사, 지역사회에 새로운 활력을 제시할 것입니다. 궁극적으로 글로벌 오피스의 새로운 기준을 제시하는 복합 자산으로 자리매김할 것입니다.">
-                        Spanning an impressive 4,948,871 square feet, IOTA Seoul sets a new benchmark for cutting-edge
-                        business districts. Designed with state-of-the-art technology and sustainability at its core, it
-                        offers premium office spaces, Seoul’s largest integrated green space connected to Namsan,
-                        wellness-driven retail, and world-class cultural destinations.
+                        Spanning an impressive 4,948,871 square feet, IOTA Seoul sets a new benchmark.
+                    </p>
+                    <p class="en-only-text transition-all duration-300"
+                        data-en="More than just a development, IOTA Seoul is an evolution of urban living—a place where business, culture, and nature converge to inspire daily life."
+                        data-kr="">
+                        More than just a development, IOTA Seoul is an evolution of urban living—a place where business,
+                        culture, and nature converge to inspire daily life.
                     </p>
                 </div>
             </div>
-
-            <!-- 하단 전체화면 이미지 레이아웃 -->
             <div class="full-image-container relative">
                 <img src="img/iota_full.jpg" alt="IOTA Full Background"
                     class="w-full h-auto block -mt-[30px] -mb-[10px] transform origin-center transition-transform duration-700 ease-out">
             </div>
         </section>
 
-        <!-- SECTION 3 (PROPERTY OVERVIEW) -->
-        <section class="section content-section bs-section-3 h-auto" id="section3">
-            <!-- 하단 전체화면 이미지 레이아웃 (Section 2와 동일 비율) -->
+        <!-- SECTION 3 (PROPERTY OVERVIEW - BLACK) -->
+        <section class="section content-section bs-section-3 h-auto bg-black pt-[200px]" id="section3"
+            style="padding-top: 200px;">
             <div class="full-image-container relative">
                 <img src="img/iota_full_2.jpg" alt="IOTA Property Details"
                     class="w-full h-auto block -mt-[30px] -mb-[10px] transform origin-center">
             </div>
-
-            <!-- 텍스트 콘텐츠 (이미지 하단 배경) -->
-            <div class="w-full text-black flex flex-col pt-[76px] pb-32 px-6 md:px-0">
-
+            <div class="w-full text-white flex flex-col pt-[70px] pb-32 px-6 md:px-0">
                 <h2 class="text-[28px] md:text-[36px] font-bold tracking-[-0.02em] mb-[60px] bs-fade-up">
                     <span data-en="PROPERTY OVERVIEW" data-kr="PROPERTY OVERVIEW">PROPERTY OVERVIEW</span>
                 </h2>
-
                 <div class="flex flex-col md:flex-row md:justify-between w-full gap-y-[115px] md:gap-x-[63px]">
-
                     <!-- IOTA ONE -->
                     <div class="w-full md:w-[31%] bs-fade-up delay-100">
-                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA ONE
-                        </h3>
+                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA ONE</h3>
                         <ul class="flex flex-col w-full font-inter text-[16px] md:text-[18px] tracking-[-0.02em]">
                             <li class="relative pt-3 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">GFA</span>
-                                <span class="font-light">281,547 m² <span class="text-[13px] text-gray-500 ml-1">(85,168
+                                <span>GFA</span>
+                                <span class="font-light">281,547 m² <span class="text-[13px] text-gray-400 ml-1">(85,168
                                         py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-300"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-300"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Total Floors</span>
+                                <span>Total Floors</span>
                                 <span class="font-light">B10/34F</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-400"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-400"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Office Floor Area</span>
-                                <span class="font-light">3,798 m² <span class="text-[13px] text-gray-500 ml-1">(1,149
+                                <span>Office Floor Area</span>
+                                <span class="font-light">3,798 m² <span class="text-[13px] text-gray-400 ml-1">(1,149
                                         py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-500"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-500"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Office Floor Height</span>
+                                <span>Office Floor Height</span>
                                 <span class="font-light">4.4m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-600"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-600"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal" data-en="Office Ceiling Height"
-                                    data-kr="Office Celling Height">Office Ceiling Height</span>
+                                <span>Office Ceiling Height</span>
                                 <span class="font-light">2.95m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-700"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-700"></div>
                             </li>
                         </ul>
                     </div>
-
                     <!-- IOTA HOTEL -->
                     <div class="w-full md:w-[31%] bs-fade-up delay-300">
-                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA HOTEL
-                        </h3>
+                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA HOTEL</h3>
                         <ul class="flex flex-col w-full font-inter text-[16px] md:text-[18px] tracking-[-0.02em]">
                             <li class="relative pt-3 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">GFA</span>
-                                <span class="font-light">57,435 m² <span class="text-[13px] text-gray-500 ml-1">(17,374
+                                <span>GFA</span>
+                                <span class="font-light">57,435 m² <span class="text-[13px] text-gray-400 ml-1">(17,374
                                         py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-500"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-500"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Total Floors</span>
+                                <span>Total Floors</span>
                                 <span class="font-light">B10/39F</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-600"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-600"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Floor Height</span>
+                                <span>Floor Height</span>
                                 <span class="font-light">3.3m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-700"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-700"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal" data-en="Ceiling Height" data-kr="Celling Height">Ceiling
-                                    Height</span>
+                                <span>Ceiling Height</span>
                                 <span class="font-light">2.6m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-800"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-800"></div>
                             </li>
                         </ul>
                     </div>
-
                     <!-- IOTA ONE & HOTEL -->
                     <div class="w-full md:w-[31%] bs-fade-up delay-600">
-                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA ONE &
-                            HOTEL</h3>
+                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA ONE & HOTEL</h3>
                         <ul class="flex flex-col w-full font-inter text-[16px] md:text-[18px] tracking-[-0.02em]">
                             <li class="relative pt-3 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Site Area</span>
-                                <span class="font-light">20,350 m² <span class="text-[13px] text-gray-500 ml-1">(6,156
+                                <span>Site Area</span>
+                                <span class="font-light">20,350 m² <span class="text-[13px] text-gray-400 ml-1">(6,156
                                         py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-800"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-800"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Height of Building</span>
+                                <span>Height of Building</span>
                                 <span class="font-light">143m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-900"></div>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-900"></div>
                             </li>
                             <li class="relative pt-4 pb-3 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Parking</span>
-                                <span class="font-light" data-en="2,232 spaces" data-kr="2,232대">2,232 spaces</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-gray-200 bs-draw-line delay-1000"></div>
+                                <span>Parking</span>
+                                <span class="font-light">2,232 spaces</span>
+                                <div class="absolute bottom-0 left-0 h-[1px] bg-white/20 bs-draw-line delay-1000"></div>
                             </li>
                         </ul>
                     </div>
-
                 </div>
-
-                <!-- IOTA TWO (Full Width with Text Overlay on Top-Left) -->
-                <div class="w-full mt-[115px] relative bs-fade-up delay-700 overflow-hidden group">
-                    <!-- Background Image (Full Width within margins) -->
-                    <div class="w-full overflow-hidden">
-                        <img src="img/iota2.jpg" alt="IOTA TWO"
-                            class="w-full h-auto object-cover transform transition-transform duration-[2s] group-hover:scale-105">
-                    </div>
-
-                    <!-- Absolute Text Overlay (Top-Left Sky Area) -->
+                <!-- IOTA TWO -->
+                <div class="w-full mt-[90px] relative bs-fade-up delay-700 overflow-hidden group">
+                    <img src="img/iota2.jpg" alt="IOTA TWO"
+                        class="w-full h-auto object-cover transform transition-transform duration-[2s] group-hover:scale-105">
                     <div
                         class="absolute top-[5%] left-[5%] md:top-12 md:left-12 w-[80%] md:w-[320px] lg:w-[380px] text-black">
-                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6 tracking-[-0.02em]">IOTA TWO</h3>
-                        <ul
-                            class="flex flex-col w-full font-inter text-[13px] md:text-[15px] tracking-[-0.03em] leading-tight">
+                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6">IOTA TWO</h3>
+                        <ul class="flex flex-col w-full font-inter text-[13px] md:text-[15px] leading-tight">
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">GFA</span>
+                                <span>GFA</span>
                                 <span class="font-light">120,783 m² <span class="text-[11px] opacity-60 ml-1">(36,537
                                         py)</span></span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-200"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Total Floors</span>
+                                <span>Total Floors</span>
                                 <span class="font-light">B9/34F</span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-300"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Office Floor Area</span>
+                                <span>Office Floor Area</span>
                                 <span class="font-light">1,901 m² <span class="text-[11px] opacity-60 ml-1">(575
                                         py)</span></span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-400"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Office Floor Height</span>
+                                <span>Office Floor Height</span>
                                 <span class="font-light">4.3m</span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-500"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Office Ceiling Height</span>
+                                <span>Office Ceiling Height</span>
                                 <span class="font-light">2.95m</span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-600"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Site Area</span>
+                                <span>Site Area</span>
                                 <span class="font-light">7,200 m² <span class="text-[11px] opacity-60 ml-1">(2,178
                                         py)</span></span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-700"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Height of Building</span>
+                                <span>Height of Building</span>
                                 <span class="font-light">163m</span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-800"></div>
                             </li>
                             <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span class="font-normal">Parking</span>
+                                <span>Parking</span>
                                 <span class="font-light">519</span>
                                 <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-900"></div>
                             </li>
@@ -516,108 +478,96 @@
             </div>
         </section>
 
+        <!-- SECTION 4 (BRAND GUIDELINES) -->
+        <section class="section h-auto min-h-screen flex flex-col md:flex-row items-stretch overflow-hidden"
+            id="section4">
+            <div class="w-full md:w-1/2 bg-white flex items-center justify-center py-24 md:py-0 relative">
+                <img src="img/logo_black.png" alt="IOTA Logo" class="h-[70px] md:h-[110px] object-contain logo-wrapper">
+            </div>
+            <div
+                class="w-full md:w-1/2 bg-[#1b2a1f] text-white flex flex-col justify-center px-8 md:px-12 lg:px-24 py-24 md:py-32 green-panel relative z-10">
+                <div class="max-w-2xl text-content-wrapper">
+                    <h2 class="text-[38px] md:text-[50px] font-bold mb-16 bs-fade-up delay-100">Brand Guidelines</h2>
+                    <div class="space-y-12 text-[16px] md:text-[18px] leading-[1.8] font-inter">
+                        <div class="font-light opacity-90 bs-fade-up delay-300"
+                            data-en="The name “IOTA”, derived from the Greek numeral for 10, symbolizes completeness and integration—a number that encompasses all others.<br>It represents IGIS Asset Management’s ambition to unify its offerings—real estate products, services, and platforms—under a singular master brand.<br><br>The visual composition of the name, evoking both “10” and “IO,” reinforces the idea of wholeness and total value.<br>The horizontal and vertical strokes extending from the letter “I” symbolize the expansion of space, connectivity, and reach, mirroring IOTA’s vision of redefining urban experiences.<br><br>More than a development, IOTA is a future-ready ecosystem that seamlessly blends space, service, culture, and lifestyle into a platform of open-ended possibilities."
+                            data-kr="그리스 숫자로 10을 의미하는 단어 ‘IOTA’는 모든 수를 포함하는 통합의 수 ’10’을 뜻합니다.<br><br>이지스자산운용이 제공하는 상품과 서비스, 플랫폼을 통합하는 마스터 브랜드를 의미하며, ’10’과 ‘IO’의 시각적 연상으로 완전함을 더합니다.<br><br>더불어 ‘I’의 사방으로 뻗어나가는 가로, 세로획의 조합은 공간의 가치를 확장시켜 새로운 업역을 구축하는 IOTA의 행보와도 맞닿아 있으며 공간, 서비스, 플랫폼 등의 차별적 경험과 생활/문화를 포괄하며 열린 가능성을 담고 있습니다.">
+                            그리스 숫자로 10을 의미하는 단어 ‘IOTA’는 모든 수를 포함하는 통합의 수 ’10’을 뜻합니다.<br><br>
+                            이지스자산운용이 제공하는 상품과 서비스, 플랫폼을 통합하는 마스터 브랜드를 의미하며, ’10’과 ‘IO’의 시각적 연상으로 완전함을 더합니다.<br><br>
+                            더불어 ‘I’의 사방으로 뻗어나가는 가로, 세로획의 조합은 공간의 가치를 확장시켜 새로운 업역을 구축하는 IOTA의 행보와도 맞닿아 있으며 공간, 서비스, 플랫폼
+                            등의 차별적 경험과 생활/문화를 포괄하며 열린 가능성을 담고 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- 스크롤 감지에 따른 헤더 표시/숨김 스크립트 및 언어 변환 로직 -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 헤더 스크롤 로직
             const header = document.getElementById("main-header");
             const scrollContainer = document.getElementById("scroll-container");
             const scrollArrow = document.getElementById("scroll-arrow");
             let lastScrollTop = 0;
 
-            // 이미지 줌 효과를 위한 요소
-            const fullImage = document.querySelector('.full-image-container img');
-
-            // 추가: 인트로 애니메이션 후 헤더 숨김 유지 & 스크롤 화살표만 보이기
-            setTimeout(() => {
-                if (scrollArrow) scrollArrow.classList.remove('opacity-0');
-            }, 2000);
+            setTimeout(() => { if (scrollArrow) scrollArrow.classList.remove('opacity-0'); }, 2000);
 
             scrollContainer.addEventListener("scroll", function () {
                 let st = scrollContainer.scrollTop;
 
-                // 스크롤 줌 효과 (아주 약간 확대)
-                if (fullImage) {
-                    const zoomLevel = 1 + (st * 0.00005);
-                    fullImage.style.transform = `scale(${Math.min(zoomLevel, 1.05)})`;
-                }
-
-                // 첫 화면 최상단에서는 헤더를 무조건 숨김
+                // 최상단 근처에서는 무조건 숨김
                 if (st <= 50) {
                     header.style.transform = "translateY(-100%)";
-                }
-                // 스크롤 방향 판별 (위로 올릴 때 헤더 노출, 아래로 내릴 때 숨김)
-                else {
+                    header.style.transitionDuration = "200ms";
+                } else {
                     if (st < lastScrollTop) {
-                        // 위로 스크롤
+                        // 스크롤 올릴 때 (나타남 - 부드럽게)
                         header.style.transform = "translateY(0)";
+                        header.style.transitionDuration = "500ms";
                     } else if (st > lastScrollTop) {
-                        // 아래로 스크롤
+                        // 스크롤 내릴 때 (사라짐 - 빠르게)
                         header.style.transform = "translateY(-100%)";
+                        header.style.transitionDuration = "200ms";
                     }
                 }
                 lastScrollTop = st;
             }, { passive: true });
 
-            // 언어 변환 로직
-            const translatableElements = document.querySelectorAll("[data-en][data-kr]");
-            const labelDesktop = document.getElementById("current-lang-text");
-            const labelMobile = document.getElementById("current-lang-text-mob");
-            const descText = document.getElementById("desc-text");
-
             window.switchLanguage = function (lang) {
                 const label = lang === 'kr' ? 'KR' : 'EN';
-                if (labelDesktop) labelDesktop.textContent = label;
-                if (labelMobile) labelMobile.textContent = label;
-
-                // 한글일 때 폰트를 한 단계 굵게 (font-normal)
-                if (descText) {
-                    if (lang === 'kr') {
-                        descText.classList.remove('font-light');
-                        descText.classList.add('font-normal');
-                    } else {
-                        descText.classList.remove('font-normal');
-                        descText.classList.add('font-light');
-                    }
-                }
-
-                // 텍스트 변환
-                translatableElements.forEach(el => {
-                    el.textContent = el.getAttribute(`data-${lang}`);
+                document.getElementById("current-lang-text").textContent = label;
+                document.querySelectorAll("[data-en][data-kr]").forEach(el => {
+                    el.innerHTML = el.getAttribute(`data-${lang}`);
                 });
-            };
 
-            // 초기 언어 설정
+                // 한글 폰트 굵기 한 단계 두껍게 조절 (하단 영어 텍스트 제외)
+                const krTargetTexts = document.querySelectorAll(".kr-target-text");
+                const enOnlyTexts = document.querySelectorAll(".en-only-text");
+
+                if (lang === 'kr') {
+                    krTargetTexts.forEach(el => {
+                        el.classList.add('font-normal');
+                        el.classList.remove('font-light');
+                    });
+                    enOnlyTexts.forEach(el => {
+                        el.style.display = 'none';
+                    });
+                } else {
+                    krTargetTexts.forEach(el => {
+                        el.classList.add('font-light');
+                        el.classList.remove('font-normal');
+                    });
+                    enOnlyTexts.forEach(el => {
+                        el.style.display = 'block';
+                    });
+                }
+            };
             switchLanguage('en');
 
-            // --- Section 3 Interaction Observer ---
-            const section3 = document.getElementById("section3");
-            const bsFadeUps = document.querySelectorAll(".bs-fade-up");
-            const bsDrawLines = document.querySelectorAll(".bs-draw-line");
-
-            if (section3) {
-                const s3Observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                        }
-                    });
-                }, { threshold: 0.1 });
-                s3Observer.observe(section3);
-
-                const elementObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                        }
-                    });
-                }, { threshold: 0.2 });
-
-                bsFadeUps.forEach(el => elementObserver.observe(el));
-                bsDrawLines.forEach(el => elementObserver.observe(el));
-            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll("#section3, #section4, .bs-fade-up, .bs-draw-line").forEach(el => observer.observe(el));
         });
     </script>
 </body>
