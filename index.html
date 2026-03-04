@@ -18,7 +18,7 @@
             theme: {
                 screens: {
                     'md': '1000px',
-                    'lg': '2420px',
+                    'lg': '1800px',
                 },
                 extend: {
                     fontFamily: {
@@ -57,7 +57,6 @@
         .section {
             width: 100%;
             height: auto;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -104,6 +103,90 @@
             }
 
             to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: marquee 35s linear infinite;
+        }
+
+        .curtain-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .curtain-panel {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #1b2a1f;
+            transform: scaleY(0);
+            transform-origin: top;
+            z-index: 10;
+        }
+
+        .curtain-container.active .curtain-panel {
+            animation: curtainSlideDown 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+
+        .curtain-img {
+            opacity: 0;
+            transform: scale(1.05);
+            transition: transform 1.5s ease-out;
+        }
+
+        .curtain-container.active .curtain-img {
+            animation: curtainImgReveal 1.5s forwards;
+            transform: scale(1);
+        }
+
+        @keyframes curtainSlideDown {
+            0% {
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+
+            49% {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+
+            50% {
+                transform: scaleY(1);
+                transform-origin: bottom;
+            }
+
+            100% {
+                transform: scaleY(0);
+                transform-origin: bottom;
+            }
+        }
+
+        @keyframes curtainImgReveal {
+
+            0%,
+            49% {
+                opacity: 0;
+            }
+
+            50%,
+            100% {
                 opacity: 1;
             }
         }
@@ -282,12 +365,33 @@
                 </div>
             </div>
             <div class="md:hidden flex items-center space-x-4">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden');"
+                    class="focus:outline-none">
+                    <svg class="w-6 h-6 border rounded" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 6h16M4 12h16M4 18h16">
+                        </path>
+                    </svg>
+                </button>
             </div>
         </header>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu"
+            class="fixed top-[90px] left-0 w-full bg-white shadow-lg flex flex-col py-6 space-y-4 hidden z-40 transition-transform md:hidden text-center justify-center items-center">
+            <a href="#" class="text-[16px] font-normal text-gray-800" data-en="Our Firm" data-kr="회사 소개">Our Firm</a>
+            <a href="#" class="text-[16px] font-normal text-gray-800" data-en="Businesses"
+                data-kr="사업 영역">Businesses</a>
+            <a href="#" class="text-[16px] font-normal text-gray-800" data-en="Insights" data-kr="인사이트">Insights</a>
+            <a href="#" class="text-[16px] font-normal text-gray-800" data-en="Careers" data-kr="채용 정보">Careers</a>
+            <a href="#" class="text-[16px] font-normal text-gray-800" data-en="News" data-kr="새소식">News</a>
+            <div class="flex space-x-6 pt-4 border-t border-gray-200 justify-center">
+                <button class="text-sm font-bold text-gray-800 hover:text-gray-500"
+                    onclick="switchLanguage('en'); document.getElementById('mobile-menu').classList.add('hidden');">EN</button>
+                <button class="text-sm font-bold text-gray-800 hover:text-gray-500"
+                    onclick="switchLanguage('kr'); document.getElementById('mobile-menu').classList.add('hidden');">KR</button>
+            </div>
+        </div>
 
         <!-- SECTION 1 (Intro) -->
         <section class="section min-h-screen bg-black flex flex-col items-center justify-center relative">
@@ -332,15 +436,16 @@
                     </p>
                 </div>
             </div>
-            <div class="w-full flex flex-col gap-[10px]">
+            <div class="w-full flex flex-col gap-[30px]">
                 <div class="full-image-container relative">
                     <img src="img/iota_full.jpg" alt="IOTA Full Background"
                         class="w-full h-auto block transform origin-center transition-transform duration-700 ease-out"
                         style="margin-top: -30px;">
                 </div>
-                <div class="full-image-container relative">
+                <div class="full-image-container curtain-container">
+                    <div class="curtain-panel"></div>
                     <img src="img/iota_full_3.jpg" alt="IOTA Full Background 3"
-                        class="w-full h-auto block transform origin-center transition-transform duration-700 ease-out">
+                        class="curtain-img w-full h-auto block transform origin-center transition-transform duration-700 ease-out">
                 </div>
             </div>
         </section>
@@ -487,11 +592,12 @@
                 </div>
             </div>
 
-            <div class="w-full flex flex-col gap-y-[20px] pb-32">
-                <div class="w-full flex flex-col gap-y-[20px] pb-32">
-                    <div class="full-image-container relative overflow-hidden group">
+            <div class="w-full flex flex-col gap-y-[20px] pb-[150px]">
+                <div class="w-full flex flex-col gap-y-[20px]">
+                    <div class="full-image-container curtain-container overflow-hidden group">
+                        <div class="curtain-panel"></div>
                         <img src="img/iota_full_2.jpg" alt="IOTA Property Details"
-                            class="w-full h-auto block transform origin-center transition-transform duration-[2s] group-hover:scale-105">
+                            class="curtain-img w-full h-auto block transform origin-center transition-transform duration-[2s] group-hover:scale-105">
                     </div>
                     <!-- IOTA TWO -->
                     <div class="w-full relative bs-fade-up delay-700 overflow-hidden group">
@@ -525,20 +631,39 @@
             </div>
         </section>
 
+        <!-- SECTION 4.5 (MARQUEE) -->
+        <section class="w-full bg-black text-white flex flex-col justify-center items-center overflow-hidden relative"
+            id="marquee-section" style="height: 1000px;">
+            <div class="w-full px-6 md:px-[60px] lg:px-[180px] text-left absolute top-[150px] lg:top-[200px] left-0">
+                <h2 class="text-[42px] md:text-[60px] font-bold tracking-[0.2em] text-gray-500 font-inter">LOCATION</h2>
+            </div>
+            <div class="w-full overflow-hidden whitespace-nowrap mt-[50px]">
+                <div class="animate-marquee items-center gap-x-20">
+                    <span
+                        class="text-[104px] md:text-[160px] lg:text-[224px] font-bold tracking-tighter text-white font-inter leading-none">The
+                        Nation's Ultimate Transit Hub - Unmatched, Unrivaled</span>
+                    <span
+                        class="text-[104px] md:text-[160px] lg:text-[224px] font-bold tracking-tighter text-white font-inter leading-none">The
+                        Nation's Ultimate Transit Hub - Unmatched, Unrivaled</span>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 5 (SYBD) -->
         <section class="section bg-white text-black relative" id="section5">
-            <div class="w-full relative min-h-screen overflow-hidden flex flex-col lg:block" id="sybd-auto-container">
+            <div class="w-full relative h-auto lg:min-h-screen overflow-hidden flex flex-col lg:block"
+                id="sybd-auto-container">
                 <!-- Foreground Layer: Text Content over Maps (Top on Mobile/iPad) -->
                 <div
                     class="w-full flex relative lg:absolute lg:top-0 lg:left-0 z-10 lg:h-full lg:pointer-events-none order-1 lg:order-none">
                     <div
-                        class="w-full lg:w-[50%] h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-transparent pointer-events-auto">
+                        class="w-full lg:w-[50%] h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-transparent pointer-events-auto py-10 lg:py-0">
                         <div class="font-bold text-[14px] md:text-[16px] text-gray-800 mb-2 font-inter tracking-tight">
                             New Economy Cluster</div>
                         <h2
-                            class="text-[40px] md:text-[60px] font-bold leading-none mb-10 text-black tracking-[-0.02em] font-inter">
+                            class="text-[40px] md:text-[60px] lg:text-[84px] font-bold leading-none mb-10 text-black tracking-[-0.02em] font-inter">
                             SYBD <span
-                                class="text-[14px] md:text-[18px] font-normal text-gray-500 align-middle tracking-normal">*Seoul
+                                class="text-[9px] md:text-[11px] font-normal text-gray-500 align-middle tracking-normal">*Seoul
                                 Yongsan Business District</span>
                         </h2>
 
@@ -549,7 +674,7 @@
                                 글로벌 인재, 혁신 기업을 위한 새로운 업무 지구로의 부상
                             </h3>
                             <div
-                                class="text-[14px] md:text-[16px] text-gray-500 mt-1 font-inter font-medium tracking-tight">
+                                class="text-[14px] md:text-[16px] text-gray-500 mt-[10px] font-inter font-medium tracking-tight">
                                 Seoul's Next Global Business Hub</div>
                         </div>
 
@@ -572,14 +697,14 @@
                         </div>
 
                         <!-- Chart Comparison -->
-                        <div
-                            class="w-full flex font-inter text-[11px] md:text-[12px] font-medium text-black tracking-tight justify-between relative mt-4">
+                        <div class="w-full flex font-inter text-[11px] md:text-[12px] font-medium text-black tracking-tight justify-between items-stretch relative mt-4 mb-[30px] lg:mb-0"
+                            style="min-height: 250px;">
                             <!-- Manhattan -->
                             <div class="w-[48%] flex flex-col items-center h-full">
                                 <div class="mb-3 text-[14px] md:text-[16px]">Manhattan</div>
                                 <div class="bg-[#2B3531] text-white px-2 py-2 w-full text-center tracking-normal">Grand
                                     Central Station</div>
-                                <div class="w-px bg-black relative flex-grow min-h-[60px] my-1">
+                                <div class="w-px bg-black relative flex-grow my-1">
                                     <div
                                         class="absolute -top-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-black">
                                     </div>
@@ -590,7 +715,7 @@
                                 </div>
                                 <div class="bg-[#3A4A41] text-white px-2 py-2 w-full text-center tracking-normal">Penn
                                     Station</div>
-                                <div class="w-px bg-black relative flex-grow min-h-[30px] my-1">
+                                <div class="w-px bg-black relative flex-grow my-1">
                                     <div
                                         class="absolute -bottom-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[6px] border-l-transparent border-r-transparent border-t-black">
                                     </div>
@@ -605,7 +730,7 @@
                                 <div class="mb-3 text-[14px] md:text-[16px]">Seoul</div>
                                 <div class="bg-[#2B3531] text-white px-2 py-2 w-full text-center tracking-normal">Seoul
                                     Station</div>
-                                <div class="w-px bg-black relative flex-grow min-h-[140px] my-1">
+                                <div class="w-px bg-black relative flex-grow my-1">
                                     <div
                                         class="absolute -top-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-black">
                                     </div>
@@ -627,15 +752,16 @@
 
                 <!-- Background Overlap Layer / Bottom Image Layer for Mobile (Order 2) -->
                 <div
-                    class="w-full h-[50vh] min-h-[400px] lg:min-h-0 md:h-[60vh] lg:h-full lg:absolute lg:top-0 lg:right-0 lg:w-[70%] z-0 relative order-2 lg:order-none overflow-hidden pb-10 lg:pb-0">
+                    class="w-full h-auto lg:h-full lg:absolute lg:top-0 lg:right-0 lg:w-[70%] z-0 relative order-2 lg:order-none overflow-hidden">
+                    <!-- Base relative image to dictate full natural height when not absolute -->
                     <img src="img/sybd1.jpg" alt="SYBD Map 1"
-                        class="absolute w-full h-full object-contain lg:object-cover transition-opacity duration-1000 opacity-100 pointer-events-none lg:scale-90 lg:origin-right"
+                        class="relative w-full h-auto lg:absolute lg:h-full lg:object-cover object-cover transition-opacity duration-1000 opacity-100 pointer-events-none lg:scale-90 lg:origin-right"
                         id="sybd-img-1" style="object-position: right center;">
                     <img src="img/sybd2.jpg" alt="SYBD Map 2"
-                        class="absolute w-full h-full object-contain lg:object-cover transition-opacity duration-1000 opacity-0 pointer-events-none lg:scale-90 lg:origin-right"
+                        class="absolute top-0 left-0 w-full h-full lg:object-cover object-cover transition-opacity duration-1000 opacity-0 pointer-events-none lg:scale-90 lg:origin-right"
                         id="sybd-img-2" style="object-position: right center;">
                     <img src="img/sybd3.jpg" alt="SYBD Map 3"
-                        class="absolute w-full h-full object-contain lg:object-cover transition-opacity duration-1000 opacity-0 pointer-events-none lg:scale-90 lg:origin-right"
+                        class="absolute top-0 left-0 w-full h-full lg:object-cover object-cover transition-opacity duration-1000 opacity-0 pointer-events-none lg:scale-90 lg:origin-right"
                         id="sybd-img-3" style="object-position: right center;">
                 </div>
 
@@ -761,7 +887,7 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
             }, { threshold: 0.1 });
-            document.querySelectorAll("#section3, #section4, .bs-fade-up, .bs-draw-line").forEach(el => observer.observe(el));
+            document.querySelectorAll("#section3, #section4, .bs-fade-up, .bs-draw-line, .curtain-container").forEach(el => observer.observe(el));
         });
     </script>
 </body>
