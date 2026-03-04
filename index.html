@@ -731,9 +731,11 @@
         </section>
 
 
+
         <!-- SECTION 5 (SYBD) -->
         <section class="w-full bg-white text-black relative" id="section5">
-            <div class="w-full relative h-auto lg:h-[100vh] overflow-hidden flex flex-col lg:block"
+
+            <div class="w-full relative h-[100vh] lg:h-[100vh] overflow-hidden flex flex-col lg:block"
                 id="sybd-auto-container">
                 <!-- Foreground Layer: Text Content over Maps (Top on Mobile/iPad) -->
                 <div
@@ -762,12 +764,12 @@
 
                         <div
                             class="text-[13px] md:text-[15px] text-black leading-relaxed tracking-[-0.02em] space-y-4 mb-10 font-normal kr-target-text">
-                            <p data-kr="서울역과 용산역을 잇는 교통의 결절지인 SYBD는 뉴욕의 그랜드 센트럴에서 허드슨 야드를 아우르는 글로벌 업무지구와 같이 서울의 차기 글로벌 비즈니스 허브로 도약할 것입니다."
+                            <p class="kr-target-text transition-all duration-300" data-kr="서울역과 용산역을 잇는 교통의 결절지인 SYBD는 뉴욕의 그랜드 센트럴에서 허드슨 야드를 아우르는 글로벌 업무지구와 같이 서울의 차기 글로벌 비즈니스 허브로 도약할 것입니다."
                                 data-en="Connecting Seoul Station and Yongsan Station, SYBD (Seoul Yongsan Business District) is becoming the most desired retail and office locations within the city. Just as Hudson Yards extends from Grand Central Terminal in New York to form a world-class business cluster, SYBD is poised to become Seoul's next-generation global business hub, seamlessly integrating transit, commerce, and innovation.">
                                 서울역과 용산역을 잇는 교통의 결절지인 SYBD는 뉴욕의 그랜드 센트럴에서 허드슨 야드를 아우르는 글로벌 업무지구와 같이 서울의 차기 글로벌 비즈니스 허브로
                                 도약할 것입니다.
                             </p>
-                            <p class="en-only-text font-inter opacity-90" data-kr=""
+                            <p class="en-only-text font-inter opacity-90 transition-all duration-300" data-kr=""
                                 data-en="Connecting Seoul Station and Yongsan Station, SYBD (Seoul Yongsan Business District) is becoming the most desired retail and office locations within the city. Just as Hudson Yards extends from Grand Central Terminal in New York to form a world-class business cluster, SYBD is poised to become Seoul's next-generation global business hub, seamlessly integrating transit, commerce, and innovation."
                                 style="display:none;">
                                 Connecting Seoul Station and Yongsan Station, SYBD (Seoul Yongsan Business District) is
@@ -834,10 +836,10 @@
 
                 <!-- Background Overlap Layer / Bottom Image Layer for Mobile (Order 2) -->
                 <div
-                    class="w-full h-auto lg:h-full lg:absolute lg:top-0 lg:right-0 lg:w-[70%] z-0 relative order-2 lg:order-none overflow-hidden">
+                    class="w-full h-auto lg:h-[100vh] lg:absolute lg:top-0 lg:right-0 lg:w-[70%] z-0 relative order-2 lg:order-none overflow-hidden">
                     <!-- Base relative image to dictate full natural height when not absolute -->
                     <img src="img/sybd1.jpg" alt="SYBD Map 1"
-                        class="relative w-full h-auto lg:absolute lg:h-full lg:object-cover object-cover opacity-100 pointer-events-none lg:origin-right transition-opacity duration-700 ease-in-out"
+                        class="absolute top-0 left-0 w-full h-full lg:object-cover object-cover opacity-100 pointer-events-none lg:origin-right transition-opacity duration-700 ease-in-out"
                         id="sybd-img-1" style="object-position: right center;">
                     <img src="img/sybd2.jpg" alt="SYBD Map 2"
                         class="absolute top-0 left-0 w-full h-full lg:object-cover object-cover opacity-0 pointer-events-none lg:origin-right transition-opacity duration-700 ease-in-out"
@@ -848,7 +850,9 @@
                 </div>
 
             </div>
+
         </section>
+
     </div>
 
     <script>
@@ -860,7 +864,7 @@
 
             setTimeout(() => { if (scrollArrow) scrollArrow.classList.remove('opacity-0'); }, 2000);
 
-            const sybdContainer = document.getElementById('sybd-scroll-container');
+                        const sybdContainer = document.getElementById('sybd-scroll-container');
             const sybdImg1 = document.getElementById('sybd-img-1');
             const sybdImg2 = document.getElementById('sybd-img-2');
             const sybdImg3 = document.getElementById('sybd-img-3');
@@ -888,7 +892,7 @@
                 // Removed SYBD scroll sync logic, using IntersectionObserver instead
             }, { passive: true });
 
-            // SYBD Auto Animation
+                        // SYBD Auto Animation
             const sybdAutoContainer = document.getElementById('sybd-auto-container');
             let sybdInterval;
             let currentSybdImage = 1;
