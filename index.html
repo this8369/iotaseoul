@@ -16,6 +16,10 @@
     <script>
         tailwind.config = {
             theme: {
+                screens: {
+                    'md': '1000px',
+                    'lg': '1600px',
+                },
                 extend: {
                     fontFamily: {
                         sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', '"Helvetica Neue"', '"Segoe UI"', '"Apple SD Gothic Neo"', '"Noto Sans KR"', '"Malgun Gothic"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', 'sans-serif'],
@@ -220,14 +224,14 @@
             transition-delay: 1000ms;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1600px) {
             .content-section {
                 padding-left: 50px;
                 padding-right: 50px;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
             .content-section {
                 padding-left: 0px;
                 padding-right: 0px;
@@ -428,65 +432,75 @@
             </div>
 
             <div class="w-full flex flex-col gap-y-[20px] pb-32">
-                <div class="full-image-container relative">
-                    <img src="img/iota_full_2.jpg" alt="IOTA Property Details"
-                        class="w-full h-auto block transform origin-center">
-                </div>
-                <!-- IOTA TWO -->
-                <div class="w-full relative bs-fade-up delay-700 overflow-hidden group">
-                    <img src="img/iota2.jpg" alt="IOTA TWO"
-                        class="w-full h-auto object-cover transform transition-transform duration-[2s] group-hover:scale-105">
-                    <div
-                        class="absolute top-[5%] left-[5%] md:top-12 md:left-12 w-[80%] md:w-[320px] lg:w-[380px] text-black">
-                        <h3 class="text-[18px] md:text-[22px] font-bold mb-6">IOTA TWO</h3>
-                        <ul class="flex flex-col w-full font-inter text-[13px] md:text-[15px] leading-tight">
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>GFA</span>
-                                <span class="font-light">120,783 m² <span class="text-[11px] opacity-60 ml-1">(36,537
-                                        py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-200"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Total Floors</span>
-                                <span class="font-light">B9/34F</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-300"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Office Floor Area</span>
-                                <span class="font-light">1,901 m² <span class="text-[11px] opacity-60 ml-1">(575
-                                        py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-400"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Office Floor Height</span>
-                                <span class="font-light">4.3m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-500"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Office Ceiling Height</span>
-                                <span class="font-light">2.95m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-600"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Site Area</span>
-                                <span class="font-light">7,200 m² <span class="text-[11px] opacity-60 ml-1">(2,178
-                                        py)</span></span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-700"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Height of Building</span>
-                                <span class="font-light">163m</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-800"></div>
-                            </li>
-                            <li class="relative py-2 flex justify-between items-end overflow-hidden">
-                                <span>Parking</span>
-                                <span class="font-light">519</span>
-                                <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-900"></div>
-                            </li>
-                        </ul>
+                <div class="w-full flex flex-col gap-y-[20px] pb-32">
+                    <div class="full-image-container relative overflow-hidden group">
+                        <img src="img/iota_full_2.jpg" alt="IOTA Property Details"
+                            class="w-full h-auto block transform origin-center transition-transform duration-[2s] group-hover:scale-105">
+                    </div>
+                    <!-- IOTA TWO -->
+                    <div class="w-full relative bs-fade-up delay-700 overflow-hidden group">
+                        <img src="img/iota2.jpg" alt="IOTA TWO"
+                            class="w-full h-auto object-cover transform transition-transform duration-[2s] group-hover:scale-105">
+                        <div
+                            class="absolute top-[5%] left-[5%] md:top-12 md:left-12 w-[80%] md:w-[320px] lg:w-[380px] text-black">
+                            <h3 class="text-[18px] md:text-[22px] font-bold mb-6">IOTA TWO</h3>
+                            <ul class="flex flex-col w-full font-inter text-[13px] md:text-[15px] leading-tight">
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>GFA</span>
+                                    <span class="font-light">120,783 m² <span
+                                            class="text-[11px] opacity-60 ml-1">(36,537
+                                            py)</span></span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-200">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Total Floors</span>
+                                    <span class="font-light">B9/34F</span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-300">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Office Floor Area</span>
+                                    <span class="font-light">1,901 m² <span class="text-[11px] opacity-60 ml-1">(575
+                                            py)</span></span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-400">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Office Floor Height</span>
+                                    <span class="font-light">4.3m</span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-500">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Office Ceiling Height</span>
+                                    <span class="font-light">2.95m</span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-600">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Site Area</span>
+                                    <span class="font-light">7,200 m² <span class="text-[11px] opacity-60 ml-1">(2,178
+                                            py)</span></span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-700">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Height of Building</span>
+                                    <span class="font-light">163m</span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-800">
+                                    </div>
+                                </li>
+                                <li class="relative py-2 flex justify-between items-end overflow-hidden">
+                                    <span>Parking</span>
+                                    <span class="font-light">519</span>
+                                    <div class="absolute bottom-0 left-0 h-[1px] bg-black/10 bs-draw-line delay-900">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- SECTION 4 (BRAND GUIDELINES) -->
@@ -512,6 +526,123 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECTION 5 (SYBD) -->
+        <section class="section bg-white text-black relative" id="section5">
+            <div class="w-full relative min-h-screen overflow-hidden flex flex-col lg:block" id="sybd-auto-container">
+                <!-- Foreground Layer: Text Content over Maps (Top on Mobile/iPad) -->
+                <div
+                    class="w-full flex relative lg:absolute lg:top-0 lg:left-0 z-10 pt-[100px] lg:h-full lg:pointer-events-none order-1 lg:order-none">
+                    <div
+                        class="w-full lg:w-[50%] h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] pb-20 bg-white lg:bg-white/50 pointer-events-auto">
+                        <div class="font-bold text-[14px] md:text-[16px] text-gray-800 mb-2 font-inter tracking-tight">
+                            New Economy Cluster</div>
+                        <h2
+                            class="text-[40px] md:text-[60px] font-bold leading-none mb-10 text-black tracking-[-0.02em] font-inter">
+                            SYBD <span
+                                class="text-[14px] md:text-[18px] font-normal text-gray-500 align-middle tracking-normal">*Seoul
+                                Yongsan Business District</span>
+                        </h2>
+
+                        <div class="mb-4">
+                            <h3 class="text-[18px] md:text-[22px] font-bold text-[#3B7062] tracking-[-0.02em]"
+                                data-kr="글로벌 인재, 혁신 기업을 위한 새로운 업무 지구로의 부상"
+                                data-en="Becoming the New Business District for Global Talent and Innovative Companies">
+                                글로벌 인재, 혁신 기업을 위한 새로운 업무 지구로의 부상
+                            </h3>
+                            <div
+                                class="text-[14px] md:text-[16px] text-gray-500 mt-1 font-inter font-medium tracking-tight">
+                                Seoul's Next Global Business Hub</div>
+                        </div>
+
+                        <div
+                            class="text-[13px] md:text-[15px] text-black leading-relaxed tracking-[-0.02em] space-y-4 mb-10 font-normal kr-target-text">
+                            <p data-kr="서울역과 용산역을 잇는 교통의 결절지인 SYBD는 뉴욕의 그랜드 센트럴에서 허드슨 야드를 아우르는 글로벌 업무지구와 같이 서울의 차기 글로벌 비즈니스 허브로 도약할 것입니다."
+                                data-en="Connecting Seoul Station and Yongsan Station, SYBD (Seoul Yongsan Business District) is becoming the most desired retail and office locations within the city. Just as Hudson Yards extends from Grand Central Terminal in New York to form a world-class business cluster, SYBD is poised to become Seoul's next-generation global business hub, seamlessly integrating transit, commerce, and innovation.">
+                                서울역과 용산역을 잇는 교통의 결절지인 SYBD는 뉴욕의 그랜드 센트럴에서 허드슨 야드를 아우르는 글로벌 업무지구와 같이 서울의 차기 글로벌 비즈니스 허브로
+                                도약할 것입니다.
+                            </p>
+                            <p class="en-only-text font-inter opacity-90" data-kr=""
+                                data-en="Connecting Seoul Station and Yongsan Station, SYBD (Seoul Yongsan Business District) is becoming the most desired retail and office locations within the city. Just as Hudson Yards extends from Grand Central Terminal in New York to form a world-class business cluster, SYBD is poised to become Seoul's next-generation global business hub, seamlessly integrating transit, commerce, and innovation."
+                                style="display:none;">
+                                Connecting Seoul Station and Yongsan Station, SYBD (Seoul Yongsan Business District) is
+                                becoming the most desired retail and office locations within the city. Just as Hudson
+                                Yards extends from Grand Central Terminal in New York to form a world-class business
+                                cluster, SYBD is poised to become Seoul's next-generation global business hub,
+                                seamlessly integrating transit, commerce, and innovation.
+                            </p>
+                        </div>
+
+                        <!-- Chart Comparison -->
+                        <div
+                            class="w-full flex font-inter text-[11px] md:text-[12px] font-medium text-black tracking-tight justify-between relative mt-4">
+                            <!-- Manhattan -->
+                            <div class="w-[48%] flex flex-col items-center h-full">
+                                <div class="mb-3 text-[14px] md:text-[16px]">Manhattan</div>
+                                <div class="bg-[#2B3531] text-white px-2 py-2 w-full text-center tracking-normal">Grand
+                                    Central Station</div>
+                                <div class="w-px bg-black relative flex-grow min-h-[60px] my-1">
+                                    <div
+                                        class="absolute -top-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-black">
+                                    </div>
+                                    <div
+                                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 whitespace-nowrap text-center leading-[1.2] isolate before:absolute before:inset-0 before:bg-white before:opacity-80 before:-z-10 rounded">
+                                        3km<br><span class="font-normal text-[10px]">(10,000 feet)</span>
+                                    </div>
+                                </div>
+                                <div class="bg-[#3A4A41] text-white px-2 py-2 w-full text-center tracking-normal">Penn
+                                    Station</div>
+                                <div class="w-px bg-black relative flex-grow min-h-[30px] my-1">
+                                    <div
+                                        class="absolute -bottom-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[6px] border-l-transparent border-r-transparent border-t-black">
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-[#2B3531] text-white px-2 py-2 w-full text-center tracking-normal mt-auto">
+                                    Hudson Yards Station</div>
+                            </div>
+
+                            <!-- Seoul -->
+                            <div class="w-[48%] flex flex-col items-center h-full">
+                                <div class="mb-3 text-[14px] md:text-[16px]">Seoul</div>
+                                <div class="bg-[#2B3531] text-white px-2 py-2 w-full text-center tracking-normal">Seoul
+                                    Station</div>
+                                <div class="w-px bg-black relative flex-grow min-h-[140px] my-1">
+                                    <div
+                                        class="absolute -top-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-b-[6px] border-l-transparent border-r-transparent border-b-black">
+                                    </div>
+                                    <div
+                                        class="absolute -bottom-[1px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[4px] border-r-[4px] border-t-[6px] border-l-transparent border-r-transparent border-t-black">
+                                    </div>
+                                    <div
+                                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 whitespace-nowrap text-center leading-[1.2] isolate before:absolute before:inset-0 before:bg-white before:opacity-80 before:-z-10 rounded">
+                                        2.7km<br><span class="font-normal text-[10px]">(9,000 feet)</span>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-[#2B3531] text-white px-2 py-2 w-full text-center tracking-normal mt-auto">
+                                    Yongsan Station</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background Overlap Layer / Bottom Image Layer for Mobile (Order 2) -->
+                <div
+                    class="w-full h-[50vh] min-h-[400px] lg:min-h-0 md:h-[60vh] lg:h-full lg:absolute lg:top-0 lg:right-0 lg:w-[70%] z-0 relative order-2 lg:order-none overflow-hidden pb-10 lg:pb-0">
+                    <img src="img/sybd1.jpg" alt="SYBD Map 1"
+                        class="absolute w-full h-full object-contain lg:object-cover transition-opacity duration-1000 opacity-100 pointer-events-none lg:scale-90 lg:origin-right"
+                        id="sybd-img-1" style="object-position: right center;">
+                    <img src="img/sybd2.jpg" alt="SYBD Map 2"
+                        class="absolute w-full h-full object-contain lg:object-cover transition-opacity duration-1000 opacity-0 pointer-events-none lg:scale-90 lg:origin-right"
+                        id="sybd-img-2" style="object-position: right center;">
+                    <img src="img/sybd3.jpg" alt="SYBD Map 3"
+                        class="absolute w-full h-full object-contain lg:object-cover transition-opacity duration-1000 opacity-0 pointer-events-none lg:scale-90 lg:origin-right"
+                        id="sybd-img-3" style="object-position: right center;">
+                </div>
+
+            </div>
+        </section>
     </div>
 
     <script>
@@ -522,6 +653,11 @@
             let lastScrollTop = 0;
 
             setTimeout(() => { if (scrollArrow) scrollArrow.classList.remove('opacity-0'); }, 2000);
+
+            const sybdContainer = document.getElementById('sybd-scroll-container');
+            const sybdImg1 = document.getElementById('sybd-img-1');
+            const sybdImg2 = document.getElementById('sybd-img-2');
+            const sybdImg3 = document.getElementById('sybd-img-3');
 
             scrollContainer.addEventListener("scroll", function () {
                 let st = scrollContainer.scrollTop;
@@ -542,7 +678,56 @@
                     }
                 }
                 lastScrollTop = st;
+
+                // Removed SYBD scroll sync logic, using IntersectionObserver instead
             }, { passive: true });
+
+            // SYBD Auto Animation
+            const sybdAutoContainer = document.getElementById('sybd-auto-container');
+            let sybdInterval;
+            let currentSybdImage = 1;
+
+            if (sybdAutoContainer && sybdImg1 && sybdImg2 && sybdImg3) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.3
+                };
+
+                const switchSybdImage = () => {
+                    // Stop on 3rd image
+                    if (currentSybdImage >= 3) {
+                        if (sybdInterval) {
+                            clearInterval(sybdInterval);
+                            sybdInterval = null;
+                        }
+                        return;
+                    }
+                    currentSybdImage++;
+
+                    sybdImg1.style.opacity = currentSybdImage === 1 ? '1' : '0';
+                    sybdImg2.style.opacity = currentSybdImage === 2 ? '1' : '0';
+                    sybdImg3.style.opacity = currentSybdImage === 3 ? '1' : '0';
+                };
+
+                const sybdObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (!sybdInterval && currentSybdImage < 3) {
+                                // Only run if we haven't reached the 3rd image
+                                sybdInterval = setInterval(switchSybdImage, 3000); // changes every 3 seconds
+                            }
+                        } else {
+                            if (sybdInterval) {
+                                clearInterval(sybdInterval);
+                                sybdInterval = null;
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                sybdObserver.observe(sybdAutoContainer);
+            }
 
             window.switchLanguage = function (lang) {
                 const label = lang === 'kr' ? 'KR' : 'EN';
