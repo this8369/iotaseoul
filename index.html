@@ -773,11 +773,11 @@
             <div class="w-full relative h-[200vh]" id="sybd-scroll-area">
 
                 <!-- STICKY BLOCK -->
-                <div class="w-full h-[100vh] sticky top-0 left-0 overflow-hidden bg-transparent">
+                <div class="w-full h-[100vh] sticky top-0 left-0 overflow-hidden bg-white flex flex-col lg:block">
 
                     <!-- LEFT TEXT PANELS -->
                     <div
-                        class="absolute top-0 left-0 w-full h-full lg:w-[50%] z-20 overflow-hidden pointer-events-none">
+                        class="relative lg:absolute top-0 left-0 w-full h-[60vh] lg:h-full lg:w-[50%] z-20 overflow-hidden pointer-events-none">
 
                         <!-- STEP 1 (Starts active, goes UP to disappear) -->
                         <div id="sybd-step-1"
@@ -813,7 +813,7 @@
                             </div>
                             <!-- Chart Comparison -->
                             <div
-                                class="w-full h-[280px] md:h-[340px] flex font-inter text-[11px] md:text-[12px] font-medium text-black tracking-tight justify-between items-stretch relative mt-4 mb-[70px] lg:mb-0">
+                                class="w-full h-[240px] md:h-[280px] lg:h-[340px] flex font-inter text-[11px] md:text-[12px] font-medium text-black tracking-tight justify-between items-stretch relative mt-4 mb-[70px] lg:mb-0">
                                 <!-- Manhattan -->
                                 <div class="w-[48%] flex flex-col items-center h-full">
                                     <div class="mb-3 text-[14px] md:text-[16px]">Manhattan</div>
@@ -908,13 +908,11 @@
 
                     <!-- RIGHT BACKGROUND MAPS -->
                     <div
-                        class="absolute top-0 right-0 w-full h-full z-10 lg:block pointer-events-none bs-slide-left delay-300 overflow-hidden">
-                        <img src="img/sybd3.jpg" alt="SYBD Map 3"
-                            class="absolute top-0 right-0 w-[1600px] max-w-none h-full object-cover lg:object-[right_center] object-[center_center]"
-                            style="object-position: right center;">
+                        class="relative lg:absolute lg:top-0 right-0 w-full h-[40vh] lg:h-full z-10 lg:block pointer-events-none bs-slide-left delay-300 overflow-hidden lg:overflow-visible">
+                        <img src="img/sybd3.jpg" alt="SYBD Map 3" id="sybd-img-3"
+                            class="absolute top-1/2 -translate-y-1/2 right-0 w-full lg:w-[1400px] lg:max-w-none h-full lg:h-auto object-cover lg:object-contain object-[center_center] lg:object-right transition-opacity duration-1000 ease-in-out">
                         <img src="img/sybd4.jpg" alt="SYBD Map 4" id="sybd-img-4"
-                            class="absolute top-0 right-0 w-[1600px] max-w-none h-full object-cover lg:object-[center_center] object-[center_center] opacity-0 transition-opacity duration-1000 ease-in-out"
-                            style="object-position: right center;">
+                            class="absolute top-1/2 -translate-y-1/2 right-0 w-full lg:w-[1400px] lg:max-w-none h-full lg:h-auto object-cover lg:object-contain object-[center_center] lg:object-right opacity-0 transition-opacity duration-1000 ease-in-out">
                     </div>
 
                 </div>
@@ -967,6 +965,7 @@
             const sArea = document.getElementById('sybd-scroll-area');
             const step1 = document.getElementById('sybd-step-1');
             const step2 = document.getElementById('sybd-step-2');
+            const img3 = document.getElementById('sybd-img-3');
             const img4 = document.getElementById('sybd-img-4');
 
             if (sArea && scrollContainer) {
@@ -991,6 +990,9 @@
                         if (img4) {
                             img4.style.opacity = '1';
                         }
+                        if (img3) {
+                            img3.style.opacity = '0';
+                        }
                     } else {
                         // Revert to Step 1
                         if (step1 && !step1.classList.contains('active')) {
@@ -1004,6 +1006,9 @@
                         }
                         if (img4) {
                             img4.style.opacity = '0';
+                        }
+                        if (img3) {
+                            img3.style.opacity = '1';
                         }
                     }
                 }, { passive: true });
