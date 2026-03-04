@@ -44,7 +44,7 @@
             theme: {
                 screens: {
                     'md': '1000px',
-                    'lg': '1800px',
+                    'lg': '1400px',
                 },
                 extend: {
                     fontFamily: {
@@ -251,6 +251,17 @@
         .bs-fade-up.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .bs-slide-left {
+            opacity: 0;
+            transform: translateX(150px);
+            transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .bs-slide-left.active {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .bs-scale-up {
@@ -762,7 +773,7 @@
             <div class="w-full relative h-[200vh]" id="sybd-scroll-area">
 
                 <!-- STICKY BLOCK -->
-                <div class="w-full h-[100vh] sticky top-0 left-0 overflow-hidden bg-white">
+                <div class="w-full h-[100vh] sticky top-0 left-0 overflow-hidden bg-transparent">
 
                     <!-- LEFT TEXT PANELS -->
                     <div
@@ -770,7 +781,7 @@
 
                         <!-- STEP 1 (Starts active, goes UP to disappear) -->
                         <div id="sybd-step-1"
-                            class="sybd-step active absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-white lg:bg-transparent">
+                            class="sybd-step active absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-transparent">
 
                             <div
                                 class="font-bold text-[20px] md:text-[22px] text-gray-800 mb-2 font-inter tracking-tight">
@@ -855,7 +866,7 @@
 
                         <!-- STEP 2 (Starts down invisibly, comes UP to appear) -->
                         <div id="sybd-step-2"
-                            class="sybd-step down-in absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-white lg:bg-transparent">
+                            class="sybd-step down-in absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-transparent">
 
                             <div class="font-bold text-[20px] md:text-[22px] text-gray-800 mb-2 font-inter tracking-tight"
                                 data-kr="Unrivaled Accessibility" data-en="Unrivaled Accessibility">
@@ -881,7 +892,7 @@
                                     인천공항, 김포공항 까지 직접 연결되어 글로벌 혁신기업을 위한 최적의 입지 조건을 갖추고 있습니다.
                                 </p>
                             </div>
-                            <div class="w-full max-w-[400px] flex flex-col gap-2 mt-2">
+                            <div class="w-full max-w-[350px] flex flex-col gap-2 mt-2">
                                 <img src="img/airport.png" alt="Airports" class="w-full h-auto object-contain">
                                 <div class="w-full flex gap-4">
                                     <div class="w-1/2 text-[12px] md:text-[14px] text-black font-medium tracking-tight">
@@ -896,12 +907,14 @@
                     </div>
 
                     <!-- RIGHT BACKGROUND MAPS -->
-                    <div class="absolute top-0 right-0 w-full lg:w-[70%] h-full z-10 lg:block pointer-events-none">
+                    <div
+                        class="absolute top-0 right-0 w-full h-full z-10 lg:block pointer-events-none bs-slide-left delay-300 overflow-hidden">
                         <img src="img/sybd3.jpg" alt="SYBD Map 3"
-                            class="absolute top-0 left-0 w-full h-full object-cover lg:object-[right_center] object-[center_center]"
+                            class="absolute top-0 right-0 w-[1600px] max-w-none h-full object-cover lg:object-[right_center] object-[center_center]"
                             style="object-position: right center;">
                         <img src="img/sybd4.jpg" alt="SYBD Map 4" id="sybd-img-4"
-                            class="absolute top-0 left-0 w-full h-full object-cover lg:object-[center_center] object-[center_center] opacity-0 transition-opacity duration-1000 ease-in-out">
+                            class="absolute top-0 right-0 w-[1600px] max-w-none h-full object-cover lg:object-[center_center] object-[center_center] opacity-0 transition-opacity duration-1000 ease-in-out"
+                            style="object-position: right center;">
                     </div>
 
                 </div>
@@ -1030,7 +1043,7 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
             }, { threshold: 0.1 });
-            document.querySelectorAll("#section3, #section4, .bs-fade-up, .bs-draw-line, .curtain-container, .bs-scale-up").forEach(el => observer.observe(el));
+            document.querySelectorAll("#section3, #section4, .bs-fade-up, .bs-draw-line, .curtain-container, .bs-scale-up, .bs-slide-left").forEach(el => observer.observe(el));
         });
     </script>
 </body>
