@@ -23,12 +23,12 @@ export default function SectionSkyline() {
                     2032 Projected Skyline
                 </h2>
 
-                <div className="text-[17px] md:text-[20px] xl:text-[24px] font-semibold text-gray-400 leading-[1.6] tracking-[-0.02em] space-y-6 w-full mt-8 max-w-[1200px]">
+                <div className="text-[15px] md:text-[18px] xl:text-[22px] font-bold text-[#86868b] leading-[1.6] tracking-[-0.02em] space-y-6 w-full mt-8 max-w-[1200px]">
                     <p className="kr-target-text transition-all duration-300"
-                        data-kr="<span class='text-black'>2032년, 서울역을 중심으로 형성되는 새로운 도심 스카이라인은</span> 'IOTA ONE'과 'IOTA TWO'를 핵심 축으로 새로운 비즈니스 클러스터로 완성됩니다.<br/><br/><span class='text-black'>IOTA 서울은 서울역을 기점으로 CBD, YBD, GBD를 연결하는 3대 업무 축의 중심에 위치하며,</span> 서울 도심의 새로운 스카이라인과 경제 흐름을 선도하는 핵심 앵커 자산으로 자리 잡을 것입니다."
-                        data-en="<span class='text-black'>By 2032, the Seoul Station district will redefine the city's skyline</span><br/>anchored by IOTA One and IOTA Two, forming the core of a next-generation business cluster.<br/><br/><span class='text-black'>Situated at the intersection of Seoul's three major business axes</span><br/>CBD, YBD, and GBD — IOTA Seoul stands at the heart of the capital's new economic network.<br/><br/><span class='text-black'>At the meeting point of heritage, innovation, and global enterprise,</span><br/>IOTA Seoul emerges as the new center of gravity for Seoul's future business landscape.">
-                        <span className="text-black">2032년, 서울역을 중심으로 형성되는 새로운 도심 스카이라인은</span> 'IOTA ONE'과 'IOTA TWO'를 핵심 축으로 새로운 비즈니스 클러스터로 완성됩니다.<br /><br />
-                        <span className="text-black">IOTA 서울은 서울역을 기점으로 CBD, YBD, GBD를 연결하는 3대 업무 축의 중심에 위치하며,</span> 서울 도심의 새로운 스카이라인과 경제 흐름을 선도하는 핵심 앵커 자산으로 자리 잡을 것입니다.
+                        data-kr="2032년, 서울역을 중심으로 형성되는 새로운 도심 스카이라인은<br/><span class='text-black'>'IOTA ONE'과 'IOTA TWO'를 핵심 축으로 새로운 비즈니스 클러스터로 완성됩니다.</span><br/><br/>IOTA 서울은 서울역을 기점으로 CBD, YBD, GBD를 연결하는 3대 업무 축의 중심에 위치하며,<br/><span class='text-black'>서울 도심의 새로운 스카이라인과 경제 흐름을 선도하는 핵심 앵커 자산으로 자리 잡을 것입니다.</span>"
+                        data-en="By 2032, the Seoul Station district will redefine the city's skyline<br/><span class='text-black'>anchored by IOTA One and IOTA Two, forming the core of a next-generation business cluster.</span><br/><br/>Situated at the intersection of Seoul's three major business axes<br/><span class='text-black'>CBD, YBD, and GBD — IOTA Seoul stands at the heart of the capital's new economic network.</span><br/><br/>At the meeting point of heritage, innovation, and global enterprise,<br/><span class='text-black'>IOTA Seoul emerges as the new center of gravity for Seoul's future business landscape.</span>">
+                        2032년, 서울역을 중심으로 형성되는 새로운 도심 스카이라인은<br /><span className="text-black">'IOTA ONE'과 'IOTA TWO'를 핵심 축으로 새로운 비즈니스 클러스터로 완성됩니다.</span><br /><br />
+                        IOTA 서울은 서울역을 기점으로 CBD, YBD, GBD를 연결하는 3대 업무 축의 중심에 위치하며,<br /><span className="text-black">서울 도심의 새로운 스카이라인과 경제 흐름을 선도하는 핵심 앵커 자산으로 자리 잡을 것입니다.</span>
                     </p>
                 </div>
             </div>
