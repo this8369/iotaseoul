@@ -21,8 +21,8 @@ export default function SectionScale() {
             {/* MARQUEE TEXT */}
             <div className="w-full relative mb-12 md:mb-20 bs-fade-up">
                 <div className="flex w-fit animate-marquee">
-                    <h2 className="text-[120px] md:text-[200px] lg:text-[250px] font-black text-white opacity-10 tracking-tighter leading-none whitespace-nowrap">
-                        UNMATCHED SCALE UNMATCHED SCALE UNMATCHED SCALE UNMATCHED SCALE UNMATCHED SCALE&nbsp;
+                    <h2 className="text-[120px] md:text-[200px] lg:text-[250px] font-black text-white tracking-tighter leading-none whitespace-nowrap">
+                        Unmatched Scale Unmatched Scale Unmatched Scale Unmatched Scale Unmatched Scale&nbsp;
                     </h2>
                 </div>
             </div>
@@ -30,20 +30,20 @@ export default function SectionScale() {
             <div className="w-[calc(100%-48px)] md:w-[calc(100%-100px)] max-w-[1600px] mx-auto flex flex-col items-center">
 
                 {/* LARGE SCALE IMAGE */}
-                <div className="w-full mb-16 bs-fade-up delay-100">
+                <div className="w-full max-w-[1000px] mx-auto mb-16 bs-fade-up delay-100">
                     <img src="./img/scale.jpg" alt="IOTA Seoul Scale" className="w-full h-auto object-cover rounded-sm" />
                 </div>
 
                 {/* TEXT CONTENT */}
                 <div className="w-full max-w-[1200px] flex flex-col items-center text-center bs-fade-up delay-200">
 
-                    <h3 className="text-[32px] md:text-[45px] lg:text-[55px] font-extrabold text-[#A3C9A8] mb-4 md:mb-6 tracking-tight font-inter leading-tight"
+                    <h3 className="text-[32px] md:text-[45px] lg:text-[55px] font-extrabold text-white tracking-tight font-inter leading-tight"
                         data-en="Iconic Trophy Asset in Seoul"
                         data-kr="도심 핵심지에서의 초대형 복합 사업">
                         Iconic Trophy Asset in Seoul
                     </h3>
 
-                    <h4 className="text-[18px] md:text-[22px] lg:text-[26px] font-medium text-gray-300 mb-10 md:mb-14 tracking-tight leading-snug kr-target-text"
+                    <h4 className="text-[18px] md:text-[22px] lg:text-[26px] font-medium text-gray-300 my-8 md:my-10 tracking-tight leading-snug kr-target-text"
                         data-en="A flagship trophy mixed-use asset in the heart of Seoul"
                         data-kr="A flagship trophy mixed-use asset in the heart of Seoul">
                         A flagship trophy mixed-use asset in the heart of Seoul
