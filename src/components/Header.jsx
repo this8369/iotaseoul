@@ -10,6 +10,21 @@ export default function Header() {
         setMobileMenuOpen(false);
     };
 
+    const handleScrollTo = (e, targetId) => {
+        e.preventDefault();
+        setMobileMenuOpen(false);
+        if (targetId === 'top') {
+            const scrollContainer = document.getElementById('scroll-container');
+            if (scrollContainer) scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    };
+
     return (
         <>
             <header id="main-header"
@@ -17,13 +32,13 @@ export default function Header() {
                 style={{ transform: 'translateY(-100%)' }}>
                 <div className="w-full max-w-[1600px] mx-auto flex justify-between items-center">
                     <a href="#"
-                        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                        onClick={(e) => handleScrollTo(e, 'top')}
                         className="text-xl font-bold tracking-normal cursor-pointer hover:opacity-80 transition-opacity">
                         IOTA Seoul
                     </a>
                     <div className="hidden md:flex items-center space-x-10">
                         <nav className="flex space-x-8 text-[16px] font-normal text-gray-800">
-                            <a href="#section2" onClick={() => setMobileMenuOpen(false)} className="hover:text-gray-500 transition-colors duration-200">
+                            <a href="#section2" onClick={(e) => handleScrollTo(e, 'section2')} className="hover:text-gray-500 transition-colors duration-200">
                                 Location
                             </a>
                             <a href="#" className="hover:text-gray-500 transition-colors duration-200">
@@ -65,7 +80,7 @@ export default function Header() {
 
             <div id="mobile-menu"
                 className={`fixed top-[90px] left-0 w-full bg-white shadow-lg flex-col py-6 space-y-4 z-40 transition-transform md:hidden text-center justify-center items-center ${mobileMenuOpen ? 'flex' : 'hidden'}`}>
-                <a href="#section2" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-normal text-gray-800">Location</a>
+                <a href="#section2" onClick={(e) => handleScrollTo(e, 'section2')} className="text-[16px] font-normal text-gray-800">Location</a>
                 <a href="#" className="text-[16px] font-normal text-gray-800">Businesses</a>
                 <a href="#" className="text-[16px] font-normal text-gray-800">Insights</a>
                 <a href="#" className="text-[16px] font-normal text-gray-800">Careers</a>
