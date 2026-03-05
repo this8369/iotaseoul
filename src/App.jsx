@@ -13,6 +13,7 @@ import SectionGreenAmenity from './components/SectionGreenAmenity';
 import SectionNamsan from './components/SectionNamsan';
 import SectionScale from './components/SectionScale';
 import SectionLargePlate from './components/SectionLargePlate';
+import SectionNextGen from './components/SectionNextGen';
 import { useAnimations } from './hooks/useAnimations';
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
       <SectionNamsan />
       <SectionScale />
       <SectionLargePlate />
+      <SectionNextGen />
     </div>
   );
 }

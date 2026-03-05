@@ -61,6 +61,9 @@ export default function Header() {
                             <a href="#section-scale" onClick={(e) => handleScrollTo(e, 'section-scale')} className="hover:text-gray-500 transition-colors duration-200">
                                 Scale
                             </a>
+                            <a href="#section-nextgen" onClick={(e) => handleScrollTo(e, 'section-nextgen')} className="hover:text-gray-500 transition-colors duration-200">
+                                Next-Gen
+                            </a>
                             <a href="#" className="hover:text-gray-500 transition-colors duration-200">
                                 Insights
                             </a>
@@ -99,6 +102,8 @@ export default function Header() {
                 className={`fixed top-[90px] left-0 w-full bg-white shadow-lg flex-col py-6 space-y-4 z-40 transition-transform md:hidden text-center justify-center items-center ${mobileMenuOpen ? 'flex' : 'hidden'}`}>
                 <a href="#section2" onClick={(e) => handleScrollTo(e, 'section2')} className="text-[16px] font-normal text-gray-800">Location</a>
                 <a href="#section-green" onClick={(e) => handleScrollTo(e, 'section-green')} className="text-[16px] font-normal text-gray-800">Green</a>
+                <a href="#section-scale" onClick={(e) => handleScrollTo(e, 'section-scale')} className="text-[16px] font-normal text-gray-800">Scale</a>
+                <a href="#section-nextgen" onClick={(e) => handleScrollTo(e, 'section-nextgen')} className="text-[16px] font-normal text-gray-800">Next-Gen</a>
                 <a href="#" className="text-[16px] font-normal text-gray-800">Insights</a>
                 <a href="#" className="text-[16px] font-normal text-gray-800">Careers</a>
                 <a href="#" className="text-[16px] font-normal text-gray-800">News</a>
