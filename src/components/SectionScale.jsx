@@ -49,7 +49,7 @@ export default function SectionScale() {
                         A flagship trophy mixed-use asset in the heart of Seoul
                     </h4>
 
-                    <div className="text-[15px] md:text-[17px] lg:text-[19px] font-medium text-gray-300 leading-[1.8] md:leading-[1.9] tracking-[-0.01em] max-w-[900px]">
+                    <div className="text-[15px] md:text-[17px] lg:text-[19px] font-medium text-gray-300 leading-[1.5] md:leading-[1.6] tracking-[-0.01em] max-w-[900px] mb-[30px]">
                         <p className="kr-target-text transition-all duration-300 break-keep"
                             data-kr="이오타 서울은 초대형 남산 녹지를 앞마당에 둔 대형 오피스 2개동과 6성급 호텔 1개동 (리츠칼튼 예정), 다양한 웰니스 리테일 시설이 결합된 초대형 복합시설로 서울을 대표하는 트로피 에셋을 지향합니다."
                             data-en="IOTA Seoul is a massive mixed-use development, made up of 2 state-of-the-art, custom-designed office spaces and 1 ultra-luxury hotel (The Ritz-Carlton).">
@@ -66,7 +66,7 @@ export default function SectionScale() {
                                     <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">459,765</span>
                                     <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
                                 </div>
-                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-[#A3C9A8]"
+                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-gray-400"
                                     data-en="Gross Floor Area"
                                     data-kr="Gross Floor Area">
                                     Gross Floor Area
@@ -80,7 +80,7 @@ export default function SectionScale() {
                                     <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">27,537</span>
                                     <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
                                 </div>
-                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-[#A3C9A8]"
+                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-gray-400"
                                     data-en="Site Area"
                                     data-kr="Site Area">
                                     Site Area
