@@ -3,43 +3,21 @@ import React, { useEffect, useRef } from 'react';
 export default function SectionGreenAmenity() {
     const sectionRef = useRef(null);
 
+    const [isVisible, setIsVisible] = React.useState(false);
+
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Trigger animation
-                    const boxes = entry.target.querySelectorAll('.amenity-green-box');
-                    const images = entry.target.querySelectorAll('.amenity-image');
-
-                    boxes.forEach((box, index) => {
-                        setTimeout(() => {
-                            box.style.transform = 'translateY(0)';
-                            box.style.opacity = '1';
-                        }, index * 200); // 0, 200, 400, 600
-                    });
-
-                    images.forEach((img, index) => {
-                        setTimeout(() => {
-                            img.style.transform = 'translateY(0)';
-                            img.style.opacity = '1';
-                        }, 800 + (index * 200)); // 800, 1000, 1200, 1400
-                    });
-
-                    // Optional: stop observing once triggered
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
+            if (entries[0].isIntersecting) {
+                setIsVisible(true);
+                observer.disconnect();
+            }
+        }, { threshold: 0.1 });
 
         if (sectionRef.current) {
             observer.observe(sectionRef.current);
         }
 
-        return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
-        };
+        return () => observer.disconnect();
     }, []);
 
     return (
@@ -73,16 +51,16 @@ export default function SectionGreenAmenity() {
 
                 {/* 4 IMAGES HORIZONTAL LAYOUT */}
                 <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-                    {[1, 2, 3, 4].map((num) => (
+                    {[1, 2, 3, 4].map((num, i) => (
                         <div key={num} className="relative w-full aspect-[4/5] overflow-hidden rounded-lg">
                             {/* Green Box */}
-                            <div className="amenity-green-box absolute inset-0 w-full h-full bg-[#3B7062] translate-y-full opacity-0"
-                                style={{ transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease' }}>
+                            <div className={`amenity-green-box absolute inset-0 w-full h-full bg-[#3B7062] transition-all duration-[800ms] ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
+                                style={{ transitionDelay: `${i * 200}ms` }}>
                             </div>
                             {/* Image */}
                             <img src={`./img/green_0${num}.png`} alt={`Green Amenity ${num}`}
-                                className="amenity-image absolute inset-0 w-full h-full object-cover translate-y-full opacity-0"
-                                style={{ transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, opacity 0.8s ease 0.1s' }} />
+                                className={`amenity-image absolute inset-0 w-full h-full object-cover transition-all duration-[800ms] ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
+                                style={{ transitionDelay: `${800 + i * 200}ms` }} />
                         </div>
                     ))}
                 </div>
