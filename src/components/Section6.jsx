@@ -17,7 +17,7 @@ export default function Section6() {
                 </div>
 
                 {/* TEXT PANELS (Text below image) */}
-                <div className="w-full h-auto flex flex-col justify-center px-6 md:px-0 pt-16 md:pt-24 pb-[84px] md:pb-[116px]">
+                <div className="w-full h-auto flex flex-col justify-center px-6 md:px-0 pt-16 md:pt-24 pb-[54px] md:pb-[86px]">
 
                     <div className="bs-fade-up delay-100">
                         <div className="font-bold text-[16px] md:text-[20px] text-gray-400 mb-2 font-inter tracking-tight">

@@ -4,7 +4,7 @@ export default function SectionFoster() {
     const [isPlaying, setIsPlaying] = useState(false);
 
     return (
-        <section className="section w-full h-auto bg-black text-white py-[100px] md:py-[150px]" id="section-foster">
+        <section className="section w-full h-auto bg-black text-white pt-[100px] md:pt-[150px] pb-[150px] md:pb-[200px]" id="section-foster">
             <div className="w-full max-w-[1600px] mx-auto flex flex-col">
 
                 {/* Titles and Descriptions in one row on lg size */}
