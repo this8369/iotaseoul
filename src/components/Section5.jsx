@@ -144,9 +144,9 @@ export default function Section5() {
                     <div
                         className="absolute top-0 right-0 w-full h-[40vh] lg:h-full z-10 lg:block pointer-events-none bs-slide-left delay-300 overflow-hidden">
                         <img src="./img/sybd3.jpg" alt="SYBD Map 3" id="sybd-img-3"
-                            className="absolute top-0 right-0 w-full lg:w-[1400px] lg:max-w-none h-full object-cover object-[center_center] lg:object-[right_center] transition-opacity duration-1000 ease-in-out" />
+                            className="absolute top-0 right-0 w-full lg:w-[1400px] lg:max-w-none h-full object-cover object-[center_center] lg:object-[right_center] transition-all duration-1000 ease-in-out lg:translate-x-[200px]" />
                         <img src="./img/sybd4.jpg" alt="SYBD Map 4" id="sybd-img-4"
-                            className="absolute top-0 right-0 w-full lg:w-[1400px] lg:max-w-none h-full object-cover object-[center_center] lg:object-[right_center] opacity-0 transition-opacity duration-1000 ease-in-out" />
+                            className="absolute top-0 right-0 w-full lg:w-[1400px] lg:max-w-none h-full object-cover object-[center_center] lg:object-[right_center] opacity-0 transition-all duration-1000 ease-in-out lg:translate-x-[200px]" />
                     </div>
 
                 </div>
