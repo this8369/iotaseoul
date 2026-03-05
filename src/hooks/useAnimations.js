@@ -6,6 +6,7 @@ export function useAnimations() {
         const scrollContainer = document.getElementById("scroll-container");
         const scrollArrow = document.getElementById("scroll-arrow");
         let lastScrollTop = 0;
+        let scrollHideThreshold = 0;
 
         if (scrollArrow) {
             setTimeout(() => {
@@ -21,11 +22,16 @@ export function useAnimations() {
             if (st <= 50) {
                 header.style.transform = "translateY(-100%)";
                 header.style.transitionDuration = "200ms";
+                scrollHideThreshold = st;
             } else {
                 if (st < lastScrollTop) {
+                    // Scrolling up: show immediately
                     header.style.transform = "translateY(0)";
                     header.style.transitionDuration = "500ms";
-                } else if (st > lastScrollTop) {
+                    // Need to scroll down 150px from current position to hide again
+                    scrollHideThreshold = st + 150;
+                } else if (st > lastScrollTop && st > scrollHideThreshold) {
+                    // Scrolling down passed threshold: hide
                     header.style.transform = "translateY(-100%)";
                     header.style.transitionDuration = "200ms";
                 }

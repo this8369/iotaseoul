@@ -14,7 +14,7 @@ export default function SectionSkyline() {
         <section className="section content-section w-full h-auto bg-white text-black py-[100px] md:py-[150px]" id="section-skyline">
 
             {/* Text Description Box */}
-            <div className="w-full max-w-[1600px] mx-auto px-6 md:px-0 flex flex-col mb-12 bs-fade-up">
+            <div className="w-full max-w-[1600px] mx-auto px-6 md:px-0 flex flex-col items-center text-center mb-12 bs-fade-up">
 
                 {/* Title styled identical to other pages without kr-target-text which removes boldness */}
                 <h2 className="text-[35px] md:text-[50px] lg:text-[60px] font-extrabold leading-[1.05] tracking-[-0.02em] font-inter mb-8 text-black"
