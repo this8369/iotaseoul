@@ -5,7 +5,7 @@ export default function Section2() {
         <section className="section content-section h-auto mb-[100px] md:mb-[200px] pt-[30px] md:pt-[60px]" id="section2" style={{ minHeight: 'auto', paddingBottom: '0' }}>
             {/* Header Spacer */}
             <div className="h-[50px] md:h-[100px] w-full invisible"></div>
-            <div className="w-full max-w-[1700px] mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-full px-6 md:px-0 flex flex-col md:flex-row items-center mb-12">
                     {/* Left: Title and Description */}
                     <div className="w-full md:w-[60%] flex flex-col items-start justify-start">

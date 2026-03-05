@@ -5,25 +5,34 @@ export default function SectionFoster() {
 
     return (
         <section className="section w-full h-auto bg-black text-white py-[100px] md:py-[150px]" id="section-foster">
-            <div className="w-full max-w-[1700px] mx-auto px-6 md:px-0 flex flex-col">
+            <div className="w-full max-w-[1600px] mx-auto px-6 md:px-0 flex flex-col">
 
-                {/* Titles */}
-                <div className="flex flex-col mb-12 bs-fade-up">
-                    <h2 className="text-[35px] md:text-[60px] lg:text-[75px] font-bold leading-[1.1] font-inter tracking-tight">
-                        Build with
-                    </h2>
-                    <h2 className="text-[35px] md:text-[60px] lg:text-[75px] font-bold leading-[1.1] font-inter tracking-tight ml-4 md:ml-24">
-                        Foster + Partners
-                    </h2>
+                {/* Titles and Descriptions in one row on lg size */}
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-12 bs-fade-up">
+                    <div className="flex flex-col shrink-0">
+                        <h2 className="text-[35px] md:text-[60px] lg:text-[75px] font-bold leading-[1.1] font-inter tracking-tight">
+                            Build with
+                        </h2>
+                        <h2 className="text-[35px] md:text-[60px] lg:text-[75px] font-bold leading-[1.1] font-inter tracking-tight lg:ml-24">
+                            Foster + Partners
+                        </h2>
+                    </div>
+
+                    {/* Description Texts moved to the right with +6px size */}
+                    <div className="mt-8 lg:mt-0 text-[19px] md:text-[21px] font-light text-gray-300 leading-[1.6] space-y-2 lg:max-w-xl xl:max-w-2xl bs-fade-up delay-200 break-keep">
+                        <p>Designs have been revealed for IOTA Seoul I, a mixed-use development on a landmark site between Seoul Station and Namsan, a 270-metre-high peak in Jung-Gu.</p>
+                        <p>Historically, the site acted as an important gateway to Seoul when arriving by train.</p>
+                        <p>The project creates a green oasis in the heart of the city – and restores the area's historic connection with Namsan and its surrounding public park.</p>
+                    </div>
                 </div>
 
                 {/* Video Container */}
-                <div className="w-full aspect-video relative bg-gray-900 group cursor-pointer overflow-hidden bs-fade-up delay-200" onClick={() => setIsPlaying(true)}>
+                <div className="w-full aspect-video relative bg-gray-900 group cursor-pointer overflow-hidden bs-fade-up delay-400" onClick={() => setIsPlaying(true)}>
                     {!isPlaying ? (
                         <>
-                            {/* We use the max resolution thumbnail from YouTube */}
+                            {/* We use the custom thumbnail image requested by user */}
                             <img
-                                src="https://img.youtube.com/vi/vuxdaHaYbtY/maxresdefault.jpg"
+                                src="./img/foster+partners.jpg"
                                 alt="Foster + Partners Video"
                                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                             />
@@ -41,13 +50,6 @@ export default function SectionFoster() {
                             allowFullScreen>
                         </iframe>
                     )}
-                </div>
-
-                {/* Description Texts */}
-                <div className="mt-8 md:mt-12 text-[13px] md:text-[15px] font-light text-gray-300 leading-[1.6] space-y-2 bs-fade-up delay-400 max-w-5xl">
-                    <p>Designs have been revealed for IOTA Seoul I, a mixed-use development on a landmark site between Seoul Station and Namsan, a 270-metre-high peak in Jung-Gu.</p>
-                    <p>Historically, the site acted as an important gateway to Seoul when arriving by train.</p>
-                    <p>The project creates a green oasis in the heart of the city – and restores the area's historic connection with Namsan and its surrounding public park.</p>
                 </div>
 
             </div>

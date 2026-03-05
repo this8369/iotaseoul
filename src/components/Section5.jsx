@@ -15,7 +15,7 @@ export default function Section5() {
 
                         {/* STEP 1 (Starts active, goes UP to disappear) */}
                         <div id="sybd-step-1"
-                            className="sybd-step active absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-transparent">
+                            className="sybd-step active absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:pl-[150px] lg:pr-[60px] bg-transparent">
 
                             <div
                                 className="font-bold text-[20px] md:text-[22px] text-gray-800 mb-2 font-inter tracking-tight">
@@ -100,7 +100,7 @@ export default function Section5() {
 
                         {/* STEP 2 (Starts down invisibly, comes UP to appear) */}
                         <div id="sybd-step-2"
-                            className="sybd-step down-in absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:px-[180px] bg-transparent">
+                            className="sybd-step down-in absolute top-0 left-0 w-full h-full flex flex-col justify-center px-6 md:px-[60px] lg:pl-[150px] lg:pr-[60px] bg-transparent">
 
                             <div className="font-bold text-[20px] md:text-[22px] text-gray-800 mb-2 font-inter tracking-tight"
                                 data-kr="Unrivaled Accessibility" data-en="Unrivaled Accessibility">

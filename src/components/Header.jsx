@@ -13,9 +13,9 @@ export default function Header() {
     return (
         <>
             <header id="main-header"
-                className="fixed top-0 left-0 w-full bg-white text-black z-50 px-6 md:px-[50px] lg:px-[180px] py-[35px] transition-transform ease-in-out"
+                className="fixed top-0 left-0 w-full bg-white text-black z-50 px-6 md:px-[50px] lg:px-[150px] py-[35px] transition-transform ease-in-out"
                 style={{ transform: 'translateY(-100%)' }}>
-                <div className="w-full max-w-[1700px] mx-auto flex justify-between items-center">
+                <div className="w-full max-w-[1600px] mx-auto flex justify-between items-center">
                     <div className="text-xl font-bold tracking-normal">IOTA Seoul</div>
                     <div className="hidden md:flex items-center space-x-10">
                         <nav className="flex space-x-8 text-[16px] font-normal text-gray-800">

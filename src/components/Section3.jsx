@@ -3,7 +3,7 @@ import React from 'react';
 export default function Section3() {
     return (
         <section className="section content-section bs-section-3 h-auto bg-black pt-[100px] md:pt-[200px]" id="section3">
-            <div className="w-full max-w-[1700px] mx-auto">
+            <div className="w-full max-w-[1600px] mx-auto">
                 <div className="w-full text-white flex flex-col pb-[50px] md:pb-[90px] px-6 md:px-0">
                     <h2
                         className="text-[28px] md:text-[36px] font-extrabold tracking-normal mb-[60px] bs-fade-up font-inter">
