@@ -16,23 +16,27 @@ export default function Header() {
                 className="fixed top-0 left-0 w-full bg-white text-black z-50 px-6 md:px-[50px] lg:px-[150px] py-[35px] transition-transform ease-in-out"
                 style={{ transform: 'translateY(-100%)' }}>
                 <div className="w-full max-w-[1600px] mx-auto flex justify-between items-center">
-                    <div className="text-xl font-bold tracking-normal">IOTA Seoul</div>
+                    <a href="#"
+                        onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                        className="text-xl font-bold tracking-normal cursor-pointer hover:opacity-80 transition-opacity">
+                        IOTA Seoul
+                    </a>
                     <div className="hidden md:flex items-center space-x-10">
                         <nav className="flex space-x-8 text-[16px] font-normal text-gray-800">
-                            <a href="#" className="hover:text-gray-500 transition-colors duration-200">
-                                {lang === 'kr' ? '회사 소개' : 'Our Firm'}
+                            <a href="#section2" onClick={() => setMobileMenuOpen(false)} className="hover:text-gray-500 transition-colors duration-200">
+                                Location
                             </a>
                             <a href="#" className="hover:text-gray-500 transition-colors duration-200">
-                                {lang === 'kr' ? '사업 영역' : 'Businesses'}
+                                Businesses
                             </a>
                             <a href="#" className="hover:text-gray-500 transition-colors duration-200">
-                                {lang === 'kr' ? '인사이트' : 'Insights'}
+                                Insights
                             </a>
                             <a href="#" className="hover:text-gray-500 transition-colors duration-200">
-                                {lang === 'kr' ? '채용 정보' : 'Careers'}
+                                Careers
                             </a>
                             <a href="#" className="hover:text-gray-500 transition-colors duration-200">
-                                {lang === 'kr' ? '새소식' : 'News'}
+                                News
                             </a>
                         </nav>
                         <div className="w-px h-4 bg-gray-300"></div>
@@ -61,11 +65,11 @@ export default function Header() {
 
             <div id="mobile-menu"
                 className={`fixed top-[90px] left-0 w-full bg-white shadow-lg flex-col py-6 space-y-4 z-40 transition-transform md:hidden text-center justify-center items-center ${mobileMenuOpen ? 'flex' : 'hidden'}`}>
-                <a href="#" className="text-[16px] font-normal text-gray-800">{lang === 'kr' ? '회사 소개' : 'Our Firm'}</a>
-                <a href="#" className="text-[16px] font-normal text-gray-800">{lang === 'kr' ? '사업 영역' : 'Businesses'}</a>
-                <a href="#" className="text-[16px] font-normal text-gray-800">{lang === 'kr' ? '인사이트' : 'Insights'}</a>
-                <a href="#" className="text-[16px] font-normal text-gray-800">{lang === 'kr' ? '채용 정보' : 'Careers'}</a>
-                <a href="#" className="text-[16px] font-normal text-gray-800">{lang === 'kr' ? '새소식' : 'News'}</a>
+                <a href="#section2" onClick={() => setMobileMenuOpen(false)} className="text-[16px] font-normal text-gray-800">Location</a>
+                <a href="#" className="text-[16px] font-normal text-gray-800">Businesses</a>
+                <a href="#" className="text-[16px] font-normal text-gray-800">Insights</a>
+                <a href="#" className="text-[16px] font-normal text-gray-800">Careers</a>
+                <a href="#" className="text-[16px] font-normal text-gray-800">News</a>
                 <div className="flex space-x-6 pt-4 border-t border-gray-200 justify-center">
                     <button className="text-sm font-bold text-gray-800 hover:text-gray-500" onClick={() => switchLang('en')}>EN</button>
                     <button className="text-sm font-bold text-gray-800 hover:text-gray-500" onClick={() => switchLang('kr')}>KR</button>
