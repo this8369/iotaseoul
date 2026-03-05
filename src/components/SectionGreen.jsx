@@ -6,31 +6,62 @@ export default function SectionGreen() {
             <div className="w-[calc(100%-48px)] md:w-[calc(100%-100px)] max-w-[1600px] mx-auto flex flex-col">
 
                 {/* TEXT CONTENT */}
-                <div className="w-full flex flex-col items-center text-center mb-12 bs-fade-up">
-                    <h2 className="text-[40px] md:text-[50px] lg:text-[59px] font-extrabold text-[#2F4F4F] mb-2 leading-tight tracking-[-0.02em] font-inter"
+                <div className="w-full flex flex-col items-center mb-12 bs-fade-up">
+                    <h2 className="text-[40px] md:text-[50px] lg:text-[59px] font-extrabold text-[#2F4F4F] mb-2 leading-tight tracking-[-0.02em] font-inter text-center"
                         data-en="Directly Connected to Namsan Park"
                         data-kr="Directly Connected to Namsan Park">
                         Directly Connected to Namsan Park
                     </h2>
 
-                    <h3 className="text-[17px] md:text-[20px] lg:text-[22px] font-bold text-[#3B7062] mb-8 tracking-tight leading-snug"
+                    <h3 className="text-[17px] md:text-[20px] lg:text-[22px] font-bold text-[#3B7062] mb-12 tracking-tight leading-snug text-center"
                         data-kr="서울의 심장이자, 최대 녹지(87만평) 남산공원과 연결"
                         data-en="Connected to Seoul's Heart and Its Largest Green Space – Namsan Park">
                         Connected to Seoul's Heart and Its Largest Green Space – Namsan Park
                     </h3>
 
-                    <div className="text-[16px] md:text-[17px] lg:text-[18px] font-medium text-black leading-[1.7] md:leading-[1.8] space-y-4 tracking-[-0.02em] max-w-[1200px]">
-                        <p className="kr-target-text transition-all duration-300"
-                            data-kr="이오타서울은 87만 평 규모의 서울 최대 녹지, 남산공원과 직접 연결되는 <span class='font-bold'>유일한 트로피 복합자산입니다.</span><br/>서울의 심장부인 서울역권 중심에 위치하면서도, 도심 속에서 누릴 수 있는 가장 넓고 쾌적한 자연환경과의 연결성을 제공합니다.<br/>이러한 자연 인프라는 웰니스 중심의 업무 환경을 지향하는 <span class='font-bold'>글로벌 기업에게 탁월한 가치를</span> 제공하며, &quot;도심 속 그린 리트리트(Green Retreat)&quot;로서의 독보적 차별성을 만듭니다."
-                            data-en="IOTA Seoul is the only trophy-grade mixed-use development directly<br className='hidden md:block' />connected to Namsan Park, Seoul's largest urban green space spanning 710 AC.<br/><br/>Located in the city's urban core near Seoul Station, it uniquely combines metropolitan<br className='hidden md:block' />accessibility with immersive natural surroundings rarely found in major capital cities.<br/><br/>This proximity to nature offers exceptional value to global companies seeking wellness-focused,<br className='hidden md:block' />productivity-enhancing work environments, positioning IOTA as a true<br className='hidden md:block' />&quot;Green Retreat in the City&quot; with unmatched differentiation.">
-                            IOTA Seoul is the only trophy-grade mixed-use development directly<br className="hidden md:block" />
-                            connected to Namsan Park, Seoul's largest urban green space spanning 710 AC.<br /><br />
-                            Located in the city's urban core near Seoul Station, it uniquely combines metropolitan<br className="hidden md:block" />
-                            accessibility with immersive natural surroundings rarely found in major capital cities.<br /><br />
-                            This proximity to nature offers exceptional value to global companies seeking wellness-focused, <br className="hidden md:block" />
-                            productivity-enhancing work environments, positioning IOTA as a true<br className="hidden md:block" />
-                            "Green Retreat in the City" with unmatched differentiation.
-                        </p>
+                    {/* TWO COLUMN LAYOUT: Text on Left, Stats on Right */}
+                    <div className="w-full max-w-[1400px] flex flex-col xl:flex-row justify-between items-center xl:items-start pt-8 pb-4">
+
+                        {/* LEFT COLUMN: Description Text */}
+                        <div className="text-[15px] md:text-[17px] lg:text-[19px] font-medium text-black leading-[1.6] md:leading-[1.7] tracking-[-0.02em] shrink-0 text-center xl:text-left">
+                            <p className="kr-target-text transition-all duration-300"
+                                data-kr="이오타서울은 87만 평 규모의 서울 최대 녹지, 남산공원과 직접 연결되는 유일한 트로피 복합자산입니다.<br/>서울의 심장부인 서울역권 중심에 위치하면서도, 도심 속에서 누릴 수 있는 가장 넓고 쾌적한 자연환경과의 연결성을 제공합니다.<br/>이러한 자연 인프라는 웰니스 중심의 업무 환경을 지향하는 글로벌 기업에게 탁월한 가치를 제공하며, &quot;도심 속 그린 리트리트(Green Retreat)&quot;로서의 독보적 차별성을 만듭니다."
+                                data-en="IOTA Seoul is the only trophy-grade mixed-use development directly connected to<br className='hidden md:block' />Namsan Park, Seoul's largest urban green space spanning 710 AC.<br/><br/>Located in the city's urban core near Seoul Station, it uniquely combines metropolitan<br className='hidden md:block' />accessibility with immersive natural surroundings rarely found in major capital cities.<br/><br/>This proximity to nature offers exceptional value to global companies seeking<br className='hidden md:block' />wellness-focused, productivity-enhancing work environments, positioning IOTA as a<br className='hidden md:block' />true &quot;Green Retreat in the City&quot; with unmatched differentiation.">
+                                IOTA Seoul is the only trophy-grade mixed-use development directly connected to<br className="hidden md:block" />
+                                Namsan Park, Seoul's largest urban green space spanning 710 AC.<br /><br />
+                                Located in the city's urban core near Seoul Station, it uniquely combines metropolitan<br className="hidden md:block" />
+                                accessibility with immersive natural surroundings rarely found in major capital cities.<br /><br />
+                                This proximity to nature offers exceptional value to global companies seeking<br className="hidden md:block" />
+                                wellness-focused, productivity-enhancing work environments, positioning IOTA as a<br className="hidden md:block" />
+                                true "Green Retreat in the City" with unmatched differentiation.
+                            </p>
+                        </div>
+
+                        {/* RIGHT COLUMN: Statistics */}
+                        <div className="w-full xl:w-auto mt-16 xl:mt-0 flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 text-black font-inter self-center xl:self-start xl:ml-auto">
+
+                            {/* Stat 1 */}
+                            <div className="flex flex-col items-center text-center px-4 md:px-12">
+                                <div className="flex items-baseline mb-2">
+                                    <span className="text-[55px] md:text-[65px] lg:text-[75px] leading-none font-medium tracking-[-0.03em]">710</span>
+                                    <span className="text-[22px] md:text-[26px] lg:text-[30px] leading-none ml-2 tracking-[-0.02em]">AC</span>
+                                </div>
+                                <span className="text-[14px] md:text-[15px] lg:text-[16px] font-normal text-gray-800 tracking-[-0.01em]">Namsan Park</span>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="hidden md:block w-[1px] h-[60px] bg-gray-300"></div>
+
+                            {/* Stat 2 */}
+                            <div className="flex flex-col items-center text-center px-4 md:px-12 mt-8 md:mt-0">
+                                <div className="flex items-baseline mb-2">
+                                    <span className="text-[55px] md:text-[65px] lg:text-[75px] leading-none font-medium tracking-[-0.03em]">111,375</span>
+                                    <span className="text-[22px] md:text-[26px] lg:text-[30px] leading-none ml-2 tracking-[-0.02em]">SF</span>
+                                </div>
+                                <span className="text-[14px] md:text-[15px] lg:text-[16px] font-normal text-gray-800 tracking-[-0.01em]">Green Area of IOTA Seoul</span>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
