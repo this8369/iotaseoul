@@ -266,6 +266,25 @@
         transform: scale(1);
     }
 
+    .bs-zoom-slow {
+        animation: zoomSlow 30s linear infinite;
+        transform-origin: center center;
+    }
+
+    @keyframes zoomSlow {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
     .bs-draw-line {
         width: 0%;
         transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);

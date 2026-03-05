@@ -7,7 +7,7 @@ export default function SectionNamsan() {
 
                 {/* LARGE NAMSAN IMAGE */}
                 <div className="w-full mb-12 overflow-hidden bs-fade-up">
-                    <img src="./img/namsan.jpg" alt="Namsan Autumn View" className="w-full h-auto object-cover" />
+                    <img src="./img/namsan.jpg" alt="Namsan Autumn View" className="w-full h-auto object-cover bs-zoom-slow" />
                 </div>
 
                 {/* TWO COLUMN TEXT LAYOUT */}

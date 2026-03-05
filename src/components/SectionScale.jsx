@@ -38,10 +38,10 @@ export default function SectionScale() {
 
                             <div className="flex flex-col items-center bs-bounce-up delay-300">
                                 <div className="flex items-baseline">
-                                    <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight">459,765</span>
-                                    <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1">m²</span>
+                                    <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">459,765</span>
+                                    <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
                                 </div>
-                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-medium tracking-tight mt-1 md:mt-3"
+                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3"
                                     data-en="Gross Floor Area"
                                     data-kr="Gross Floor Area">
                                     Gross Floor Area
@@ -52,10 +52,10 @@ export default function SectionScale() {
 
                             <div className="flex flex-col items-center bs-bounce-up delay-500">
                                 <div className="flex items-baseline">
-                                    <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight">27,537</span>
-                                    <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1">m²</span>
+                                    <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">27,537</span>
+                                    <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
                                 </div>
-                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-medium tracking-tight mt-1 md:mt-3"
+                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3"
                                     data-en="Site Area"
                                     data-kr="Site Area">
                                     Site Area
@@ -92,7 +92,7 @@ export default function SectionScale() {
                 </div>
 
                 {/* CBD ASSETS IMAGE */}
-                <div className="w-full mt-24 md:mt-32 max-w-[800px] mx-auto flex flex-col bs-fade-up delay-300 pb-12">
+                <div className="w-full mt-24 md:mt-32 max-w-[1000px] mx-auto flex flex-col bs-fade-up delay-300 pb-12">
 
                     <div className="w-full flex justify-between items-end mb-4 px-2 space-x-2">
                         <div className="flex flex-col text-left">

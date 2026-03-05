@@ -65,7 +65,7 @@ export default function SectionGreenAmenity() {
                             <div key={num} className="flex flex-col items-center">
                                 <div className="relative w-full aspect-[4/5] overflow-hidden mb-4 rounded-none">
                                     {/* Green Box */}
-                                    <div className={`amenity-green-box absolute inset-0 w-full h-full bg-[#3B7062] z-10 transition-transform ${stage === 0 ? 'translate-y-full duration-0' : stage === 1 ? 'translate-y-0 duration-[400ms] ease-[cubic-bezier(0,0.5,0,1)]' : '-translate-y-full duration-[1200ms] ease-in-out'}`}
+                                    <div className={`amenity-green-box absolute inset-0 w-full h-full bg-[#3B7062] z-10 transition-transform ${stage === 0 ? 'translate-y-full duration-0' : stage === 1 ? 'translate-y-0 duration-[400ms] ease-[cubic-bezier(0,0.5,0,1)]' : '-translate-y-full duration-[600ms] ease-in-out'}`}
                                         style={{ transitionDelay: `${i * 300}ms` }}>
                                     </div>
                                     {/* Image */}
