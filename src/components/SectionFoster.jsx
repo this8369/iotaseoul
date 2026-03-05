@@ -8,7 +8,7 @@ export default function SectionFoster() {
             <div className="w-full max-w-[1600px] mx-auto flex flex-col">
 
                 {/* Titles and Descriptions in one row on lg size */}
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-12 bs-fade-up px-6 md:px-0">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-12 bs-fade-up px-6 lg:px-0">
                     <div className="flex flex-col shrink-0">
                         <h2 className="text-[31px] md:text-[54px] lg:text-[67px] font-bold leading-[1.1] font-inter tracking-tight">
                             Build with
