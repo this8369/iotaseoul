@@ -37,7 +37,7 @@ export default function SectionAIReady() {
                                         AI Ready Building : 데이터 기반 의사결정과 자동화를 구현하는 지능형 빌딩 운영체계
                                     </h3>
                                     <h4 className="text-[14px] md:text-[15px] lg:text-[16px] xl:text-[18px] font-bold text-gray-700 tracking-[-0.01em] mb-6 font-inter">
-                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions
+                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations<br />and Data-Based Decisions
                                     </h4>
 
                                     <div className="w-full text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep">
@@ -54,7 +54,7 @@ export default function SectionAIReady() {
                             ) : (
                                 <>
                                     <h3 className="text-[16px] md:text-[20px] lg:text-[24px] xl:text-[26px] font-bold text-[#1a65a4] tracking-[-0.01em] mb-6 font-inter leading-tight">
-                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions
+                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations<br />and Data-Based Decisions
                                     </h3>
 
                                     <div className="w-full text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] font-normal text-gray-800 leading-[1.6] tracking-[-0.01em] font-inter">
@@ -99,7 +99,7 @@ export default function SectionAIReady() {
                                         AI Ready Building : 데이터 기반 의사결정과 자동화를 구현하는 지능형 빌딩 운영체계
                                     </h3>
                                     <h4 className="text-[13px] md:text-[15px] font-bold text-gray-700 tracking-[-0.01em] mb-4 font-inter">
-                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions
+                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations<br />and Data-Based Decisions
                                     </h4>
 
                                     <div className="w-full text-[13px] md:text-[14px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep">
@@ -114,7 +114,7 @@ export default function SectionAIReady() {
                             ) : (
                                 <>
                                     <h3 className="text-[14px] md:text-[16px] font-bold text-[#1a65a4] tracking-[-0.01em] mb-4 font-inter leading-tight">
-                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions
+                                        An AI-Driven Building Ecosystem Enabling Autonomous Operations<br />and Data-Based Decisions
                                     </h3>
 
                                     <div className="w-full text-[12px] md:text-[13px] font-normal text-gray-800 leading-[1.6] tracking-[-0.01em] font-inter">
