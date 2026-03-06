@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Section2() {
     return (
-        <section className="section content-section h-auto mb-[100px] md:mb-[200px] pt-[30px] md:pt-[60px]" id="section2" style={{ minHeight: 'auto', paddingBottom: '0' }}>
+        <section className="section content-section h-auto mb-0 md:mb-[200px] pt-[30px] md:pt-[60px]" id="section2" style={{ minHeight: 'auto', paddingBottom: '0' }}>
             {/* Header Spacer */}
             <div className="h-[50px] md:h-[100px] w-full invisible"></div>
             <div className="w-full max-w-[1600px] mx-auto">
@@ -46,7 +46,7 @@ export default function Section2() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex flex-col gap-[30px]">
+                <div className="w-full flex flex-col gap-[20px] md:gap-[30px]">
                     <div className="full-image-container relative overflow-hidden group">
                         <img src="./img/iota_full.jpg" alt="IOTA Full Background"
                             className="bs-scale-up w-full h-[100vw] md:h-auto object-cover block origin-center transform transition-transform duration-[2s] group-hover:scale-105" style={{ marginTop: '-30px' }} />
