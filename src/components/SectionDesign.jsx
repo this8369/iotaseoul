@@ -10,8 +10,8 @@ export default function SectionDesign() {
 
                 {/* TEXT AREA */}
                 <div className="text-center mb-16 px-4">
-                    <h2 className="text-[32px] md:text-[50px] lg:text-[60px] font-extrabold text-[#e2d5c3] tracking-wider leading-[1.1] font-inter mb-4">
-                        DESIGNED BY THE<br className="md:hidden" /> WORLD'S FINEST EXPERT
+                    <h2 className="text-[52px] md:text-[70px] lg:text-[80px] font-extrabold text-[#e2d5c3] tracking-wider leading-[1.1] font-inter mb-4 mt-[400px]">
+                        DESIGNED BY THE<br />WORLD'S FINEST EXPERT
                     </h2>
 
                     {lang === 'kr' && (
