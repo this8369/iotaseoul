@@ -2,7 +2,18 @@ import React from 'react';
 
 export default function SectionGreen() {
     return (
-        <section className="section w-full h-auto bg-white pt-[100px] md:pt-[150px] pb-[100px]" id="section-green">
+        <section className="section w-full h-auto bg-white pt-[100px] md:pt-[150px] pb-[100px] overflow-hidden" id="section-green">
+            <style>
+                {`
+                    @keyframes panXSlow {
+                        0%, 100% { transform: translateX(0); }
+                        50% { transform: translateX(calc(-100% + 100vw)); }
+                    }
+                    .animate-pan-x-slow {
+                        animation: panXSlow 80s ease-in-out infinite;
+                    }
+                `}
+            </style>
             <div className="w-[calc(100%-48px)] md:w-[calc(100%-100px)] max-w-[1600px] mx-auto flex flex-col">
 
                 {/* TEXT CONTENT */}
@@ -65,8 +76,8 @@ export default function SectionGreen() {
                     </div>
                 </div>
 
-                {/* IMAGES CONTAINER with crossfade */}
-                <div id="green-scroll-area" className="w-full relative bs-fade-up delay-200 mt-4">
+                {/* IMAGES CONTAINER with crossfade (Desktop Only) */}
+                <div id="green-scroll-area" className="hidden md:block w-full relative bs-fade-up delay-200 mt-4 h-auto min-h-[500px]">
                     <img src="./img/namsan_map1.jpg" alt="Namsan Map 1" id="green-img-1"
                         className="w-full h-auto object-contain transition-opacity duration-1000 ease-in-out" />
                     <img src="./img/namsan_map2.jpg" alt="Namsan Map 2" id="green-img-2"
@@ -74,6 +85,14 @@ export default function SectionGreen() {
                 </div>
 
             </div>
+
+            {/* Mobile Panning Image - OUTSIDE padding wrapper to be full width */}
+            <div className="md:hidden w-full relative overflow-x-auto overflow-y-hidden scrollbar-hide mt-4 bs-fade-up delay-200">
+                <div className="relative w-[1800px]">
+                    <img src="./img/namsan_map2.jpg" alt="Namsan Map Mobile" className="w-full h-auto object-cover animate-pan-x-slow" />
+                </div>
+            </div>
+
         </section>
     );
 }
