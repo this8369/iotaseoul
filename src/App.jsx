@@ -19,6 +19,7 @@ import SectionAIReady from './components/SectionAIReady';
 import SectionAirQuality from './components/SectionAirQuality';
 import SectionSmartInterface from './components/SectionSmartInterface';
 import SectionNetZero from './components/SectionNetZero';
+import SectionRestroom from './components/SectionRestroom';
 import { useAnimations } from './hooks/useAnimations';
 
 export default function App() {
@@ -46,6 +47,7 @@ export default function App() {
       <SectionAirQuality />
       <SectionSmartInterface />
       <SectionNetZero />
+      <SectionRestroom />
     </div>
   );
 }
