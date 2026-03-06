@@ -69,49 +69,56 @@ export default function SectionAIReady() {
                     </div>
                 </div>
 
-                {/* Fallback for beneath lg (user will address mobile later) */}
-                <div className="lg:hidden w-full flex flex-col mb-12 bs-fade-up delay-200">
-                    <div className="w-full mb-[30px]">
-                        <h2 className="text-[32px] md:text-[45px] font-extrabold text-black tracking-[-0.02em] font-inter leading-tight">
-                            AI Driven Biomorphic Workplace Framework
-                        </h2>
-                    </div>
-                    <img src="./img/AI_ready_building03.jpg" alt="AI Ready 3" className="w-full h-auto object-contain" />
-                    <div className="w-full flex flex-col mt-[30px]">
-                        <h3 className="text-[20px] md:text-[24px] font-bold text-[#1a65a4] tracking-[-0.03em] mb-2 leading-tight break-keep kr-target-text en-only-hide"
-                            data-kr="AI Ready Building : 데이터 기반 의사결정과 자동화를 구현하는 지능형 빌딩 운영체계"
-                            data-en="AI Ready Building : An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions">
-                            AI Ready Building : 데이터 기반 의사결정과 자동화를 구현하는 지능형 빌딩 운영체계
-                        </h3>
-                        <h4 className="text-[14px] md:text-[16px] font-bold text-gray-700 italic tracking-[-0.01em] mb-6 font-inter"
-                            data-en="An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions"
-                            data-kr="An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions">
-                            An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions
-                        </h4>
+                {/* MOBILE ANIMATED IMAGE AREA (iPad & below) */}
+                <div id="ai-scroll-area-m" className="lg:hidden w-full relative h-[300vh] bs-fade-up delay-200">
+                    <div className="w-full h-[100vh] sticky top-0 left-0 flex flex-col justify-center overflow-hidden py-[5vh]">
+                        <div className="w-full mb-[20px] shrink-0">
+                            <h2 className="text-[28px] md:text-[36px] font-extrabold text-black tracking-[-0.02em] font-inter leading-tight">
+                                AI Driven Biomorphic Workplace Framework
+                            </h2>
+                        </div>
 
-                        <div className="w-full flex flex-col justify-between items-start gap-8">
-                            {/* LEFT KR TEXT */}
-                            <div className="w-full text-[15px] font-medium text-black leading-[1.7] tracking-[-0.02em] break-keep kr-target-text en-only-hide">
-                                <p className="mb-4">
-                                    IOTA Seoul은 AI 기반의 데이터 순환 구조를 통해 건물이 스스로 학습하고 운영되는 지능형 오피스로 진화합니다.<br className="hidden md:block" />
-                                    IoT 센서와 디지털 트윈을 통해 실시간 데이터를 수집하고, AI Agent가 이를 분석하여 건물의 에너지, 공기질, 보안, 이동, 유지보수를 자동으로 제어합니다.
-                                </p>
-                                <p>
-                                    관리자는 통합된 Building OS를 통해 모든 시스템을 단일 인터페이스로 관리할 수 있으며, 사용자는 자동으로 관리되는 최적의 웰니스 업무 환경을 경험할 수 있습니다.<br className="hidden md:block" />
-                                    이를 통해 기업은 운영 효율성과 ESG 성과를 동시에 강화할 수 있습니다.
-                                </p>
-                            </div>
+                        <div className="relative w-full flex-1 min-h-0 flex items-center justify-center">
+                            <img src="./img/AI_ready_building_m_01.jpg" alt="AI Ready Mobile 1" id="ai-img-m-1"
+                                className="absolute object-contain w-full h-full transition-opacity duration-1000 ease-in-out" />
+                            <img src="./img/AI_ready_building_m_02.jpg" alt="AI Ready Mobile 2" id="ai-img-m-2"
+                                className="absolute object-contain w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out" />
+                            <img src="./img/AI_ready_building_m_03.jpg" alt="AI Ready Mobile 3" id="ai-img-m-3"
+                                className="absolute object-contain w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out" />
+                        </div>
 
-                            {/* RIGHT EN TEXT */}
-                            <div className="w-full text-[14px] font-normal text-gray-800 leading-[1.7] tracking-[-0.01em] font-inter">
-                                <p className="mb-4">
-                                    IOTA Seoul evolves into an intelligent office that learns and operates autonomously through an AI-driven data ecosystem.<br className="hidden md:block" />
-                                    Through IoT sensors and digital twins, the building continuously collects real-time data, which the AI Agent analyzes to automatically manage energy, air quality, security, mobility, and maintenance.
-                                </p>
-                                <p>
-                                    Administrators can oversee all systems through a unified Building OS, while users experience an optimally managed wellness-focused work environment.<br className="hidden md:block" />
-                                    This intelligent framework enables enterprises to enhance both operational efficiency and ESG performance simultaneously.
-                                </p>
+                        <div className="w-full flex flex-col mt-[20px] shrink-0">
+                            <h3 className="text-[16px] md:text-[20px] font-bold text-[#1a65a4] tracking-[-0.03em] mb-2 leading-tight break-keep kr-target-text en-only-hide"
+                                data-kr="AI Ready Building : 데이터 기반 의사결정과 자동화를 구현하는 지능형 빌딩 운영체계"
+                                data-en="AI Ready Building : An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions">
+                                AI Ready Building : 데이터 기반 의사결정과 자동화를 구현하는 지능형 빌딩 운영체계
+                            </h3>
+                            <h4 className="text-[13px] md:text-[15px] font-bold text-gray-700 italic tracking-[-0.01em] mb-4 font-inter"
+                                data-en="An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions"
+                                data-kr="An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions">
+                                An AI-Driven Building Ecosystem Enabling Autonomous Operations and Data-Based Decisions
+                            </h4>
+
+                            <div className="w-full flex flex-col justify-between items-start gap-4 md:gap-6">
+                                {/* LEFT KR TEXT */}
+                                <div className="w-full text-[13px] md:text-[14px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep kr-target-text en-only-hide">
+                                    <p className="mb-2">
+                                        IOTA Seoul은 AI 기반의 데이터 순환 구조를 통해 건물이 스스로 학습하고 운영되는 지능형 오피스로 진화합니다. IoT 센서와 디지털 트윈을 통해 실시간 데이터를 수집하고, AI Agent가 이를 분석하여 건물의 에너지, 공기질, 보안, 이동, 유지보수를 자동으로 제어합니다.
+                                    </p>
+                                    <p>
+                                        관리자는 통합된 Building OS를 통해 모든 시스템을 단일 인터페이스로 관리할 수 있으며, 사용자는 자동으로 관리되는 최적의 웰니스 업무 환경을 경험할 수 있습니다. 이를 통해 기업은 운영 효율성과 ESG 성과를 동시에 강화할 수 있습니다.
+                                    </p>
+                                </div>
+
+                                {/* RIGHT EN TEXT */}
+                                <div className="w-full text-[12px] md:text-[13px] font-normal text-gray-800 leading-[1.6] tracking-[-0.01em] font-inter">
+                                    <p className="mb-2">
+                                        IOTA Seoul evolves into an intelligent office that learns and operates autonomously through an AI-driven data ecosystem. Through IoT sensors and digital twins, the building continuously collects real-time data, which the AI Agent analyzes to automatically manage energy, air quality, security, mobility, and maintenance.
+                                    </p>
+                                    <p>
+                                        Administrators can oversee all systems through a unified Building OS, while users experience an optimally managed wellness-focused work environment. This intelligent framework enables enterprises to enhance both operational efficiency and ESG performance simultaneously.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

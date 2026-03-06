@@ -93,35 +93,40 @@ export function useAnimations() {
             }
 
             // Reliable Scroll Tracking for AI Ready Section
-            const aiArea = document.getElementById('ai-scroll-area');
-            const aiImg2 = document.getElementById('ai-img-2');
-            const aiImg3 = document.getElementById('ai-img-3');
+            const applyAiScroll = (areaId, img2Id, img3Id) => {
+                const area = document.getElementById(areaId);
+                const img2 = document.getElementById(img2Id);
+                const img3 = document.getElementById(img3Id);
 
-            if (aiArea && aiImg2 && aiImg3) {
-                const rect = aiArea.getBoundingClientRect();
-                const totalScrollLength = rect.height - window.innerHeight;
+                if (area && img2 && img3) {
+                    const rect = area.getBoundingClientRect();
+                    const totalScrollLength = rect.height - window.innerHeight;
 
-                if (rect.top <= 0 && rect.top >= -totalScrollLength) {
-                    const scrollProgress = Math.abs(rect.top) / totalScrollLength;
-                    // image 1 -> image 2 -> image 3
-                    if (scrollProgress > 0.25) {
-                        aiImg2.style.opacity = '1';
-                    } else {
-                        aiImg2.style.opacity = '0';
+                    if (rect.top <= 0 && rect.top >= -totalScrollLength) {
+                        const scrollProgress = Math.abs(rect.top) / totalScrollLength;
+                        // image 1 -> image 2 -> image 3
+                        if (scrollProgress > 0.25) {
+                            img2.style.opacity = '1';
+                        } else {
+                            img2.style.opacity = '0';
+                        }
+                        if (scrollProgress > 0.6) {
+                            img3.style.opacity = '1';
+                        } else {
+                            img3.style.opacity = '0';
+                        }
+                    } else if (rect.top > 0) {
+                        img2.style.opacity = '0';
+                        img3.style.opacity = '0';
+                    } else if (rect.top < -totalScrollLength) {
+                        img2.style.opacity = '1';
+                        img3.style.opacity = '1';
                     }
-                    if (scrollProgress > 0.6) {
-                        aiImg3.style.opacity = '1';
-                    } else {
-                        aiImg3.style.opacity = '0';
-                    }
-                } else if (rect.top > 0) {
-                    aiImg2.style.opacity = '0';
-                    aiImg3.style.opacity = '0';
-                } else if (rect.top < -totalScrollLength) {
-                    aiImg2.style.opacity = '1';
-                    aiImg3.style.opacity = '1';
                 }
-            }
+            };
+
+            applyAiScroll('ai-scroll-area', 'ai-img-2', 'ai-img-3');
+            applyAiScroll('ai-scroll-area-m', 'ai-img-m-2', 'ai-img-m-3');
         };
 
         if (scrollContainer) {
