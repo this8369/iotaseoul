@@ -6,7 +6,7 @@ export default function SectionAIReady() {
             <div className="w-[calc(100%-48px)] md:w-[calc(100%-100px)] max-w-[1600px] mx-auto flex flex-col items-center border-t-[1px] border-black pt-12">
 
                 {/* ANIMATED IMAGE AREA (PC Only Focus) */}
-                <div id="ai-scroll-area" className="hidden lg:block w-full relative h-[300vh] bs-fade-up">
+                <div id="ai-scroll-area" className="hidden lg:block w-full relative h-[400vh] bs-fade-up">
                     <div className="w-full h-[100vh] sticky top-0 left-0 flex flex-col justify-center overflow-hidden py-[5vh]">
 
                         {/* Title - right above the image */}
@@ -40,19 +40,7 @@ export default function SectionAIReady() {
                             </h4>
 
                             <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-16">
-                                {/* LEFT KR TEXT */}
-                                <div className="w-full lg:w-[48%] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep kr-target-text en-only-hide">
-                                    <p className="mb-2">
-                                        IOTA Seoul은 AI 기반의 데이터 순환 구조를 통해 건물이 스스로 학습하고 운영되는 지능형 오피스로 진화합니다.<br className="hidden md:block" />
-                                        IoT 센서와 디지털 트윈을 통해 실시간 데이터를 수집하고, AI Agent가 이를 분석하여 건물의 에너지, 공기질, 보안, 이동, 유지보수를 자동으로 제어합니다.
-                                    </p>
-                                    <p>
-                                        관리자는 통합된 Building OS를 통해 모든 시스템을 단일 인터페이스로 관리할 수 있으며, 사용자는 자동으로 관리되는 최적의 웰니스 업무 환경을 경험할 수 있습니다.<br className="hidden md:block" />
-                                        이를 통해 기업은 운영 효율성과 ESG 성과를 동시에 강화할 수 있습니다.
-                                    </p>
-                                </div>
-
-                                {/* RIGHT EN TEXT */}
+                                {/* LEFT EN TEXT (Swapped) */}
                                 <div className="w-full lg:w-[48%] text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] font-normal text-gray-800 leading-[1.6] tracking-[-0.01em] font-inter">
                                     <p className="mb-2">
                                         IOTA Seoul evolves into an intelligent office that learns and operates autonomously through an AI-driven data ecosystem.<br className="hidden md:block" />
@@ -63,6 +51,18 @@ export default function SectionAIReady() {
                                         This intelligent framework enables enterprises to enhance both operational efficiency and ESG performance simultaneously.
                                     </p>
                                 </div>
+
+                                {/* RIGHT KR TEXT (Swapped) */}
+                                <div className="w-full lg:w-[48%] text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep kr-target-text en-only-hide">
+                                    <p className="mb-2">
+                                        IOTA Seoul은 AI 기반의 데이터 순환 구조를 통해 건물이 스스로 학습하고 운영되는 지능형 오피스로 진화합니다.<br className="hidden md:block" />
+                                        IoT 센서와 디지털 트윈을 통해 실시간 데이터를 수집하고, AI Agent가 이를 분석하여 건물의 에너지, 공기질, 보안, 이동, 유지보수를 자동으로 제어합니다.
+                                    </p>
+                                    <p>
+                                        관리자는 통합된 Building OS를 통해 모든 시스템을 단일 인터페이스로 관리할 수 있으며, 사용자는 자동으로 관리되는 최적의 웰니스 업무 환경을 경험할 수 있습니다.<br className="hidden md:block" />
+                                        이를 통해 기업은 운영 효율성과 ESG 성과를 동시에 강화할 수 있습니다.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -70,7 +70,7 @@ export default function SectionAIReady() {
                 </div>
 
                 {/* MOBILE ANIMATED IMAGE AREA (iPad & below) */}
-                <div id="ai-scroll-area-m" className="lg:hidden w-full relative h-[300vh] bs-fade-up delay-200">
+                <div id="ai-scroll-area-m" className="lg:hidden w-full relative h-[400vh] bs-fade-up delay-200">
                     <div className="w-full h-[100vh] sticky top-0 left-0 flex flex-col justify-center overflow-hidden py-[5vh]">
                         <div className="w-full mb-[20px] shrink-0">
                             <h2 className="text-[28px] md:text-[36px] font-extrabold text-black tracking-[-0.02em] font-inter leading-tight">
@@ -100,23 +100,23 @@ export default function SectionAIReady() {
                             </h4>
 
                             <div className="w-full flex flex-col justify-between items-start gap-4 md:gap-6">
-                                {/* LEFT KR TEXT */}
-                                <div className="w-full text-[13px] md:text-[14px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep kr-target-text en-only-hide">
-                                    <p className="mb-2">
-                                        IOTA Seoul은 AI 기반의 데이터 순환 구조를 통해 건물이 스스로 학습하고 운영되는 지능형 오피스로 진화합니다. IoT 센서와 디지털 트윈을 통해 실시간 데이터를 수집하고, AI Agent가 이를 분석하여 건물의 에너지, 공기질, 보안, 이동, 유지보수를 자동으로 제어합니다.
-                                    </p>
-                                    <p>
-                                        관리자는 통합된 Building OS를 통해 모든 시스템을 단일 인터페이스로 관리할 수 있으며, 사용자는 자동으로 관리되는 최적의 웰니스 업무 환경을 경험할 수 있습니다. 이를 통해 기업은 운영 효율성과 ESG 성과를 동시에 강화할 수 있습니다.
-                                    </p>
-                                </div>
-
-                                {/* RIGHT EN TEXT */}
+                                {/* LEFT EN TEXT (Swapped) */}
                                 <div className="w-full text-[12px] md:text-[13px] font-normal text-gray-800 leading-[1.6] tracking-[-0.01em] font-inter">
                                     <p className="mb-2">
                                         IOTA Seoul evolves into an intelligent office that learns and operates autonomously through an AI-driven data ecosystem. Through IoT sensors and digital twins, the building continuously collects real-time data, which the AI Agent analyzes to automatically manage energy, air quality, security, mobility, and maintenance.
                                     </p>
                                     <p>
                                         Administrators can oversee all systems through a unified Building OS, while users experience an optimally managed wellness-focused work environment. This intelligent framework enables enterprises to enhance both operational efficiency and ESG performance simultaneously.
+                                    </p>
+                                </div>
+
+                                {/* RIGHT KR TEXT (Swapped) */}
+                                <div className="w-full text-[13px] md:text-[14px] font-medium text-black leading-[1.6] tracking-[-0.02em] break-keep kr-target-text en-only-hide">
+                                    <p className="mb-2">
+                                        IOTA Seoul은 AI 기반의 데이터 순환 구조를 통해 건물이 스스로 학습하고 운영되는 지능형 오피스로 진화합니다. IoT 센서와 디지털 트윈을 통해 실시간 데이터를 수집하고, AI Agent가 이를 분석하여 건물의 에너지, 공기질, 보안, 이동, 유지보수를 자동으로 제어합니다.
+                                    </p>
+                                    <p>
+                                        관리자는 통합된 Building OS를 통해 모든 시스템을 단일 인터페이스로 관리할 수 있으며, 사용자는 자동으로 관리되는 최적의 웰니스 업무 환경을 경험할 수 있습니다. 이를 통해 기업은 운영 효율성과 ESG 성과를 동시에 강화할 수 있습니다.
                                     </p>
                                 </div>
                             </div>
