@@ -20,6 +20,7 @@ import SectionAirQuality from './components/SectionAirQuality';
 import SectionSmartInterface from './components/SectionSmartInterface';
 import SectionNetZero from './components/SectionNetZero';
 import SectionRestroom from './components/SectionRestroom';
+import SectionElevator from './components/SectionElevator';
 import { useAnimations } from './hooks/useAnimations';
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
       <SectionSmartInterface />
       <SectionNetZero />
       <SectionRestroom />
+      <SectionElevator />
     </div>
   );
 }
