@@ -58,15 +58,15 @@ export default function SectionScale() {
                     </div>
 
                     {/* STATS TEXT BLOCK MOVED DOWN */}
-                    <div className="w-full flex items-center justify-center mt-12 md:mt-16 font-inter text-white">
-                        <div className="flex flex-row items-center justify-center gap-8 md:gap-16 lg:gap-24">
+                    <div className="w-full flex items-center justify-center mt-12 md:mt-16 font-inter text-white px-2">
+                        <div className="flex flex-row items-center justify-center gap-4 sm:gap-8 md:gap-16 lg:gap-24">
 
                             <div className="flex flex-col items-center bs-bounce-up delay-300">
                                 <div className="flex items-baseline">
-                                    <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">459,765</span>
-                                    <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
+                                    <span className="text-[32px] sm:text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">459,765</span>
+                                    <span className="text-[16px] sm:text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
                                 </div>
-                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-gray-400"
+                                <div className="text-[13px] sm:text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-gray-400 text-center"
                                     data-en="Gross Floor Area"
                                     data-kr="Gross Floor Area">
                                     Gross Floor Area
@@ -77,10 +77,10 @@ export default function SectionScale() {
 
                             <div className="flex flex-col items-center bs-bounce-up delay-500">
                                 <div className="flex items-baseline">
-                                    <span className="text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">27,537</span>
-                                    <span className="text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
+                                    <span className="text-[32px] sm:text-[40px] md:text-[70px] lg:text-[90px] leading-none tracking-tight font-bold">27,537</span>
+                                    <span className="text-[16px] sm:text-[18px] md:text-[28px] lg:text-[36px] ml-1 font-bold">m²</span>
                                 </div>
-                                <div className="text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-gray-400"
+                                <div className="text-[13px] sm:text-[15px] md:text-[20px] lg:text-[24px] font-bold tracking-tight mt-1 md:mt-3 text-gray-400 text-center"
                                     data-en="Site Area"
                                     data-kr="Site Area">
                                     Site Area
