@@ -15,6 +15,7 @@ import SectionScale from './components/SectionScale';
 import SectionLargePlate from './components/SectionLargePlate';
 import SectionNextGen from './components/SectionNextGen';
 import SectionNextGenStandard from './components/SectionNextGenStandard';
+import SectionAIReady from './components/SectionAIReady';
 import { useAnimations } from './hooks/useAnimations';
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
       <SectionLargePlate />
       <SectionNextGen />
       <SectionNextGenStandard />
+      <SectionAIReady />
     </div>
   );
 }

@@ -91,6 +91,37 @@ export function useAnimations() {
                     greenImg2.style.opacity = '0';
                 }
             }
+
+            // Reliable Scroll Tracking for AI Ready Section
+            const aiArea = document.getElementById('ai-scroll-area');
+            const aiImg2 = document.getElementById('ai-img-2');
+            const aiImg3 = document.getElementById('ai-img-3');
+
+            if (aiArea && aiImg2 && aiImg3) {
+                const rect = aiArea.getBoundingClientRect();
+                const totalScrollLength = rect.height - window.innerHeight;
+
+                if (rect.top <= 0 && rect.top >= -totalScrollLength) {
+                    const scrollProgress = Math.abs(rect.top) / totalScrollLength;
+                    // image 1 -> image 2 -> image 3
+                    if (scrollProgress > 0.25) {
+                        aiImg2.style.opacity = '1';
+                    } else {
+                        aiImg2.style.opacity = '0';
+                    }
+                    if (scrollProgress > 0.6) {
+                        aiImg3.style.opacity = '1';
+                    } else {
+                        aiImg3.style.opacity = '0';
+                    }
+                } else if (rect.top > 0) {
+                    aiImg2.style.opacity = '0';
+                    aiImg3.style.opacity = '0';
+                } else if (rect.top < -totalScrollLength) {
+                    aiImg2.style.opacity = '1';
+                    aiImg3.style.opacity = '1';
+                }
+            }
         };
 
         if (scrollContainer) {
