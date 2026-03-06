@@ -46,7 +46,7 @@ export default function Section2() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full flex flex-col gap-[20px] md:gap-[30px]">
+                <div className="w-full flex flex-col gap-[10px] md:gap-[30px] mb-[10px] md:mb-0">
                     <div className="full-image-container relative overflow-hidden group">
                         <img src="./img/iota_full.jpg" alt="IOTA Full Background"
                             className="bs-scale-up w-full h-[100vw] md:h-auto object-cover block origin-center transform transition-transform duration-[2s] group-hover:scale-105" style={{ marginTop: '-30px' }} />
