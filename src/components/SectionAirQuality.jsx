@@ -9,7 +9,7 @@ export default function SectionAirQuality() {
             <div className="w-[calc(100%-48px)] md:w-[calc(100%-100px)] max-w-[1600px] mx-auto pt-4 md:pt-12 bs-fade-up">
 
                 {/* Title */}
-                <div className="w-full text-center mb-10 bs-fade-up">
+                <div className="w-full max-w-[800px] mx-auto text-left mb-10 bs-fade-up px-4 md:px-0">
                     <h2 className="text-[28px] md:text-[45px] lg:text-[54px] font-extrabold text-black tracking-tight font-inter leading-[1.25]">
                         AI-Driven Indoor<br />Air Quality Management
                     </h2>
@@ -62,7 +62,7 @@ export default function SectionAirQuality() {
                                     IOTA Seoul continuously monitors air quality across all zones, with AI algorithms autonomously controlling temperature, humidity, fine dust, and harmful gases.
                                 </p>
                                 <p className="mb-2">
-                                    The system maintains <span className="font-bold">comfort conditions for over 95% of occupancy time</span>, while real-time sensor data is integrated into the central Building OS for automatic HVAC adjustments.
+                                    The system maintains <span className="font-bold">comfort conditions for over 95% of occupancy time</span>,<br />while real-time sensor data is integrated into the central Building OS for automatic HVAC adjustments.
                                 </p>
                                 <p>
                                     This ensures occupants can maintain peak concentration and wellness within an optimized indoor environment.
@@ -72,7 +72,7 @@ export default function SectionAirQuality() {
                     )}
 
                     {/* Grid Title */}
-                    <div className="w-full flex flex-col items-center sm:flex-row sm:justify-center sm:items-baseline gap-2 mb-4 mt-16 font-inter">
+                    <div className="w-full max-w-[800px] mx-auto flex flex-col items-center sm:flex-row sm:justify-start sm:items-baseline gap-2 mb-4 mt-16 font-inter px-4 md:px-0">
                         <h5 className="font-bold text-[14px] md:text-[16px] text-black tracking-tight leading-none text-center sm:text-left">
                             Target Indoor Air Quality Performance
                         </h5>
@@ -82,7 +82,7 @@ export default function SectionAirQuality() {
                     </div>
 
                     {/* Grid Layout (3 cols x 2 rows with 1px gap for borders) */}
-                    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-[1px] bg-gray-200">
+                    <div className="w-full max-w-[800px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-[1px] bg-gray-200">
                         {/* PM2.5 */}
                         <div className="bg-[#f0f5fa] flex flex-col items-center justify-center py-6 px-4">
                             <span className="text-[12px] text-gray-600 mb-1 font-medium font-inter">PM2.5</span>
