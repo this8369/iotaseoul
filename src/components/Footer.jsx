@@ -163,13 +163,13 @@ The interpretation of these terms and any disputes between the Company and users
                         {lang === 'kr' ? "면책공고" : "Disclaimer"}
                     </button>
                     <span className="opacity-40">|</span>
-                    <button
+                    {/* <button
                         onClick={() => setModalType('privacy')}
                         className="hover:text-current hover:opacity-80 transition-colors font-bold cursor-pointer text-[#888]"
                     >
                         {lang === 'kr' ? "개인정보 처리방침" : "Privacy Policy"}
                     </button>
-                    <span className="opacity-40">|</span>
+                    <span className="opacity-40">|</span> */}
                     <button
                         onClick={() => setModalType('terms')}
                         className="hover:text-current hover:opacity-80 transition-colors font-bold cursor-pointer text-[#888]"

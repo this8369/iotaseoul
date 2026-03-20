@@ -448,9 +448,9 @@ export default function Header({ onNavigateToNews, onNavigateToHome, onNavigateT
                                         <button onClick={() => setModalType('disclaimer')} className="cursor-pointer hover:text-black transition-colors">
                                             {lang === 'kr' ? "면책공고" : "Disclaimer"}
                                         </button>
-                                        <button onClick={() => setModalType('privacy')} className="cursor-pointer hover:text-black transition-colors">
+                                        {/* <button onClick={() => setModalType('privacy')} className="cursor-pointer hover:text-black transition-colors">
                                             {lang === 'kr' ? "개인정보 처리방침" : "Privacy Policy"}
-                                        </button>
+                                        </button> */}
                                         <button onClick={() => setModalType('terms')} className="cursor-pointer hover:text-black transition-colors">
                                             {lang === 'kr' ? "이용약관" : "Terms of Service"}
                                         </button>
@@ -556,9 +556,9 @@ export default function Header({ onNavigateToNews, onNavigateToHome, onNavigateT
                         <button onClick={() => { setModalType('disclaimer'); setMobileMenuOpen(false); }} className="text-[15px] font-bold text-gray-500 hover:text-black cursor-pointer transition-colors">
                             {lang === 'kr' ? "면책공고" : "Disclaimer"}
                         </button>
-                        <button onClick={() => { setModalType('privacy'); setMobileMenuOpen(false); }} className="text-[15px] font-bold text-gray-500 hover:text-black cursor-pointer transition-colors">
+                        {/* <button onClick={() => { setModalType('privacy'); setMobileMenuOpen(false); }} className="text-[15px] font-bold text-gray-500 hover:text-black cursor-pointer transition-colors">
                             {lang === 'kr' ? "개인정보 처리방침" : "Privacy Policy"}
-                        </button>
+                        </button> */}
                         <button onClick={() => { setModalType('terms'); setMobileMenuOpen(false); }} className="text-[15px] font-bold text-gray-500 hover:text-black cursor-pointer transition-colors">
                             {lang === 'kr' ? "이용약관" : "Terms of Service"}
                         </button>
