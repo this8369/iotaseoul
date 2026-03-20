@@ -47,7 +47,7 @@ export default function SectionSkyline() {
                         alt="2032 Seoul Station Skyline Projected View"
                         className="w-full h-auto object-contain block"
                         draggable="false"
-                    />
+                     loading="lazy" />
 
                     {/* Static, dry white circles with text */}
                     {pins.map((pin) => (

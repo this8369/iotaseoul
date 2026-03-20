@@ -117,7 +117,7 @@ export default function SectionScale() {
                     </div>
 
                     <div className="w-full bg-white p-4 md:p-6 lg:p-8 rounded-none shadow-xl">
-                        <img  src="./img/CBD_assets.webp" width="2080" height="674" alt="CBD Assets Comparison" className="w-full h-auto object-contain" />
+                        <img  src="./img/CBD_assets.webp" width="2080" height="674" alt="CBD Assets Comparison" className="w-full h-auto object-contain"  loading="lazy" />
                     </div>
                 </div>
 

@@ -21,11 +21,11 @@ export default function SectionAIReady() {
                         {/* Images */}
                         <div className="relative w-full flex-1 min-h-0 flex items-center justify-center">
                             <img  src="./img/AI_ready_building01.webp" width="3000" height="1486" alt="AI Ready 1" id="ai-img-1"
-                                className="absolute object-contain w-full h-full transition-opacity duration-1000 ease-in-out" />
+                                className="absolute object-contain w-full h-full transition-opacity duration-1000 ease-in-out"  loading="lazy" />
                             <img  src="./img/AI_ready_building02.webp" width="3000" height="1486" alt="AI Ready 2" id="ai-img-2"
-                                className="absolute object-contain w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out" />
+                                className="absolute object-contain w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out"  loading="lazy" />
                             <img  src="./img/AI_ready_building03.webp" width="3000" height="1486" alt="AI Ready 3" id="ai-img-3"
-                                className="absolute object-contain w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out" />
+                                className="absolute object-contain w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out"  loading="lazy" />
                         </div>
 
                         {/* BOTTOM TEXT CONTENT (Starts below image area) - exactly 30px top margin */}
@@ -103,13 +103,13 @@ export default function SectionAIReady() {
                     <div className="relative w-[110%] -ml-[5%] mx-auto mb-8">
                         <img  src="./img/AI_ready_building_m_01.webp" width="2200" height="2569" alt="AI Ready Mobile 1"
                             className="relative w-full h-auto object-contain"
-                            style={{ animation: 'mobileSeq1 3s forwards' }} />
+                            style={{ animation: 'mobileSeq1 3s forwards' }}  loading="lazy" />
                         <img  src="./img/AI_ready_building_m_02.webp" width="2200" height="2569" alt="AI Ready Mobile 2"
                             className="absolute top-0 left-0 w-full h-full object-contain"
-                            style={{ animation: 'mobileSeq2 3s forwards' }} />
+                            style={{ animation: 'mobileSeq2 3s forwards' }}  loading="lazy" />
                         <img  src="./img/AI_ready_building_m_03.webp" width="2200" height="2569" alt="AI Ready Mobile 3"
                             className="absolute top-0 left-0 w-full h-full object-contain"
-                            style={{ animation: 'mobileSeq3 3s forwards' }} />
+                            style={{ animation: 'mobileSeq3 3s forwards' }}  loading="lazy" />
                     </div>
 
                     <div className="w-full max-w-[1100px] mx-auto flex flex-col shrink-0 text-left px-4">

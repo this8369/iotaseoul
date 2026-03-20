@@ -64,7 +64,7 @@ export default function NewsDetail({ article, onBack }) {
                                 if (block.type === 'image') {
                                     return (
                                         <div key={idx} className="w-full my-8">
-                                            <img src={block.url} alt="News Graphic" className="w-full h-auto object-contain" />
+                                            <img src={block.url} alt="News Graphic" className="w-full h-auto object-contain"  loading="lazy" />
                                         </div>
                                     );
                                 }

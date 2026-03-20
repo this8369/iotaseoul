@@ -80,7 +80,7 @@ export default function SectionGreen() {
                 {/* IMAGES CONTAINER with crossfade (Desktop Only) */}
                 <div id="green-scroll-area" className="hidden md:block w-full relative bs-fade-up delay-200 mt-4 h-auto min-h-[500px]">
                     <img  src="./img/namsan_map1.webp" width="2500" height="1194" alt="Namsan Map 1" id="green-img-1"
-                        className="w-full h-auto object-contain transition-opacity duration-1000 ease-in-out" />
+                        className="w-full h-auto object-contain transition-opacity duration-1000 ease-in-out"  loading="lazy" />
                     <HoverImage  src="./img/namsan_map2.webp" width="2500" height="1194" alt="Namsan Map 2" id="green-img-2"
                         className="w-full h-full object-contain block" wrapperClassName="absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out group cursor-pointer" />
                 </div>

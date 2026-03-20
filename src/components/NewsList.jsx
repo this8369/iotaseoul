@@ -54,7 +54,7 @@ export default function NewsList({ onSelectArticle }) {
                                             src={videoNews.image}
                                             alt={videoNews.title}
                                             className="w-full h-full object-cover object-top transition-all duration-700 ease-out brightness-100"
-                                        />
+                                         loading="lazy" />
                                     )}
                                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
@@ -96,7 +96,7 @@ export default function NewsList({ onSelectArticle }) {
                                         src={featuredNews.image}
                                         alt={featuredNews.title}
                                         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                                    />
+                                     loading="lazy" />
                                 ) : (
                                     <div className="w-full h-full bg-gray-200"></div>
                                 )}

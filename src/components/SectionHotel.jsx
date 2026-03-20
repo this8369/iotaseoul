@@ -40,7 +40,7 @@ export default function SectionHotel() {
 
                     {/* Logo Area */}
                     <div className="w-full md:w-auto flex justify-center md:justify-end bs-fade-up delay-200">
-                        <img src="./img/logo_ritzcarlton.webp" width="432" height="304" alt="The Ritz-Carlton Logo" className="w-[120px] md:w-[160px] object-contain" />
+                        <img src="./img/logo_ritzcarlton.webp" width="432" height="304" alt="The Ritz-Carlton Logo" className="w-[120px] md:w-[160px] object-contain"  loading="lazy" />
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export default function SectionHotel() {
                         alt="The Ritz-Carlton Residence"
                         width="2500" height="1090"
                         className="w-full aspect-square md:aspect-auto md:h-auto object-cover block transform transition-transform duration-[2s] group-hover:scale-105"
-                    />
+                     loading="lazy" />
                     <div className="absolute bottom-2 right-4 md:bottom-4 md:right-4 z-10 text-[6px] md:text-[10px] text-white/90 font-inter tracking-[0.1em] text-right font-light drop-shadow-md">
                         THE RITZ-CARLTON, FUKUOKA (ritzcarlton.com)
                     </div>
@@ -65,7 +65,7 @@ export default function SectionHotel() {
                             alt="The Ritz-Carlton Philadelphia"
                             width="3000" height="1202"
                             className="w-full aspect-square md:aspect-auto md:h-auto object-cover block transform transition-transform duration-[2s] group-hover:scale-[1.03]"
-                        />
+                         loading="lazy" />
                     </div>
                     <div className="text-right mt-3 text-[9px] md:text-[11px] text-gray-500 font-inter tracking-[0.05em] font-light">
                         THE RITZ-CARLTON, PHILADELPHIA (ritzcarlton.com)
@@ -74,7 +74,7 @@ export default function SectionHotel() {
 
                 {/* Second Text Area */}
                 <div className="w-full mt-16 md:mt-20 flex flex-col items-center bs-fade-up">
-                    <img src="./img/logo_ritzcarlton.webp" width="432" height="304" alt="The Ritz-Carlton Logo" className="w-[120px] md:w-[160px] mb-12 md:mb-16 object-contain" />
+                    <img src="./img/logo_ritzcarlton.webp" width="432" height="304" alt="The Ritz-Carlton Logo" className="w-[120px] md:w-[160px] mb-12 md:mb-16 object-contain"  loading="lazy" />
 
                     <div className="w-full flex flex-col lg:flex-row justify-between items-start gap-8 md:gap-16">
                         {lang === 'kr' ? (

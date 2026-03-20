@@ -12,7 +12,7 @@ export default function Section6() {
                     <div className="full-image-container relative overflow-hidden group">
                         <img  src="./img/gtx.webp" width="2500" height="1645" alt="GTX Map"
                             className="bs-scale-up w-full h-auto block transform origin-center transition-transform duration-[2s] group-hover:scale-105"
-                            style={{ marginTop: '-30px' }} />
+                            style={{ marginTop: '-30px' }}  loading="lazy" />
                     </div>
                 </div>
 
