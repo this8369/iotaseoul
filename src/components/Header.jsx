@@ -42,8 +42,7 @@ export default function Header({ onNavigateToNews, onNavigateToHome, onNavigateT
             id: "section-design",
             items: [
                 { label: "Architectural Legends", id: "section-design" },
-                { label: "Global Top-Tier Construction Company", id: "section-construction" },
-                { label: "Upper Luxury Hospitality", id: "section-hotel" }
+                { label: "Global Top-Tier Construction Company", id: "section-construction" }
             ]
         },
         {
@@ -103,8 +102,7 @@ export default function Header({ onNavigateToNews, onNavigateToHome, onNavigateT
             id: "section-design",
             items: [
                 { label: "세계적인 건축 거장의 만남", id: "section-design" },
-                { label: "글로벌 탑티어 건설사 참여", id: "section-construction" },
-                { label: "최상위 럭셔리 호스피탈리티", id: "section-hotel" }
+                { label: "글로벌 탑티어 건설사 참여", id: "section-construction" }
             ]
         },
         {
@@ -162,7 +160,7 @@ export default function Header({ onNavigateToNews, onNavigateToHome, onNavigateT
         }
 
         const checkScroll = () => {
-            const sections = ['section2', 'section-green', 'section-scale', 'section-nextgen', 'section-design', 'section-hotel', 'section-iotaone', 'section-iotatwo'];
+            const sections = ['section2', 'section-green', 'section-scale', 'section-nextgen', 'section-design', 'section-iotaone', 'section-iotatwo'];
             const scrollContainer = document.getElementById('scroll-container');
             if (!scrollContainer) return;
 
