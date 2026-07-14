@@ -2,10 +2,11 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function SectionHotel() {
+    return null;
     const { lang } = useLanguage();
 
     return (
-        <section className="section w-full h-auto bg-white pt-[100px] md:pt-[150px] pb-[100px] md:pb-[150px]" id="section-hotel">
+        <section className="section hidden w-full h-auto bg-white pt-[100px] md:pt-[150px] pb-[100px] md:pb-[150px]" id="section-hotel">
             <div className="w-[calc(100%-48px)] md:w-[calc(100%-100px)] max-w-[1600px] mx-auto">
                 <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-end mb-10 md:mb-14 gap-8 md:gap-0">
                     <div className="flex-1 w-full max-w-[1100px] bs-fade-up">

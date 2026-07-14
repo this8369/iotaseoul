@@ -310,9 +310,9 @@ export default function SectionIotaOne() {
                     <div className="flex flex-col w-full bs-fade-up mt-[106px] md:mt-32">
                         <h2 className="text-[28px] md:text-[40px] font-inter font-light text-white tracking-[-0.03em] leading-tight mb-6 md:mb-8 break-keep">
                             {lang === 'kr' ? (
-                                <>호텔 메인 로비:<br className="md:hidden" /> 남산의 풍경과 리츠칼튼의 품격이 닿는 곳</>
+                                <>호텔 메인 로비:<br className="md:hidden" /> 남산의 풍경과 최고급 럭셔리 호텔의 품격이 닿는 곳</>
                             ) : (
-                                <>Main Hotel Lobby:<br className="md:hidden" /> Where Namsan's Scenery Meets The Ritz-Carlton's Prestige</>
+                                <>Main Hotel Lobby:<br className="md:hidden" /> Where Namsan's Scenery Meets Ultimate Luxury Prestige</>
                             )}
                         </h2>
 
@@ -320,13 +320,13 @@ export default function SectionIotaOne() {
                             {lang === 'kr' ? (
                                 <div className="break-keep font-normal">
                                     <p className="mb-4">
-                                        IOTA 서울의 호텔 메인 로비는 남산의 녹지와 시각적으로 이어지는 탁월한 개방감을 통해, 도심 속에서도 자연과의 조화를 경험할 수 있는 환대의 무대를 제공합니다.<br className="hidden md:block" />리츠칼튼이 지향하는 절제된 품격과 세련된 서비스 철학은 자연광, 조경, 소재의 질감이 어우러진 로비 공간에 녹아 있습니다. 서울의 중심에서 휴식과 영감이 공존하는 새로운 럭셔리의 시작점입니다.
+                                        IOTA 서울의 호텔 메인 로비는 남산의 녹지와 시각적으로 이어지는 탁월한 개방감을 통해, 도심 속에서도 자연과의 조화를 경험할 수 있는 환대의 무대를 제공합니다.<br className="hidden md:block" />최고급 럭셔리 호텔이 지향하는 절제된 품격과 세련된 서비스 철학은 자연광, 조경, 소재의 질감이 어우러진 로비 공간에 녹아 있습니다. 서울의 중심에서 휴식과 영감이 공존하는 새로운 럭셔리의 시작점입니다.
                                     </p>
                                 </div>
                             ) : (
                                 <div>
                                     <p className="mb-4">
-                                        The main hotel lobby of IOTA Seoul offers a rare sense of openness, seamlessly connected to the greenery of Namsan.<br className="hidden md:block" />It embodies the refined hospitality philosophy of The Ritz-Carlton, where nature, light, and material texture converge to create a calm yet sophisticated atmosphere.<br className="hidden md:block" />More than a point of arrival, it serves as a new threshold of urban luxury — a place where rest and inspiration coexist in the heart of Seoul.
+                                        The main hotel lobby of IOTA Seoul offers a rare sense of openness, seamlessly connected to the greenery of Namsan.<br className="hidden md:block" />It embodies the refined hospitality philosophy of ultimate luxury, where nature, light, and material texture converge to create a calm yet sophisticated atmosphere.<br className="hidden md:block" />More than a point of arrival, it serves as a new threshold of urban luxury — a place where rest and inspiration coexist in the heart of Seoul.
                                     </p>
                                 </div>
                             )}
@@ -350,13 +350,13 @@ export default function SectionIotaOne() {
                             {lang === 'kr' ? (
                                 <div className="break-keep font-normal">
                                     <p className="mb-4">
-                                        IOTA 서울의 VIP 라운지는 남산의 파노라믹 뷰를 배경으로, IOTA 서울과 리츠칼튼이 추구하는 가장 세련된 형태의 환대를 구현한 공간입니다.
+                                        IOTA 서울의 VIP 라운지는 남산의 파노라믹 뷰를 배경으로, IOTA 서울과 최고급 럭셔리 호텔이 추구하는 가장 세련된 형태의 환대를 구현한 공간입니다.
                                     </p>
                                 </div>
                             ) : (
                                 <div>
                                     <p className="mb-4">
-                                        The VIP Lounge at IOTA Seoul captures the essence of The Ritz-Carlton's refined hospitality, framed by panoramic views of Namsan and the evening skyline.
+                                        The VIP Lounge at IOTA Seoul captures the essence of ultimate luxury's refined hospitality, framed by panoramic views of Namsan and the evening skyline.
                                     </p>
                                 </div>
                             )}
